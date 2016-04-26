@@ -3,38 +3,58 @@ using Microsoft.Owin.Security;
 using System;
 using System.Web;
 using System.Web.UI;
-using WebSiteimpreendorismo;
+using System.Web.UI.WebControls;
 
 public partial class Account_Login : Page
 {
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            RegisterHyperLink.NavigateUrl = "Register";
-            OpenAuthLogin.ReturnUrl = Request.QueryString["ReturnUrl"];
-            var returnUrl = HttpUtility.UrlEncode(Request.QueryString["ReturnUrl"]);
-            if (!String.IsNullOrEmpty(returnUrl))
-            {
-                RegisterHyperLink.NavigateUrl += "?ReturnUrl=" + returnUrl;
-            }
-        }
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        Panel_login.Visible = true;
+        Panel_Recupera_email.Visible = false;
+        Panel_Recupera_questao.Visible = false;
+        Panel_registo.Visible = false;
+    }
+    protected void CreateUserWizard1_CreatedUser(object sender, EventArgs e)
+    {
 
-        protected void LogIn(object sender, EventArgs e)
-        {
-            if (IsValid)
-            {
-                // Validate the user password
-                var manager = new UserManager();
-                ApplicationUser user = manager.Find(UserName.Text, Password.Text);
-                if (user != null)
-                {
-                    IdentityHelper.SignIn(manager, user, RememberMe.Checked);
-                    IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
-                }
-                else
-                {
-                    FailureText.Text = "Invalid username or password.";
-                    ErrorMessage.Visible = true;
-                }
-            }
-        }
+    }
+    protected void CustomValidator1_ServerValidate(object source, ServerValidateEventArgs args)
+    {
+        //Validacao.Nif(source, args);
+    }
+    protected void LinkButton1_Click(object sender, EventArgs e)
+    {
+        Panel_login.Visible = true;
+        Panel_registo.Visible = false;
+        Panel_Recupera_questao.Visible = false;
+        Panel_Recupera_email.Visible = false;
+
+    }
+
+    protected void LinkButton2_Click(object sender, EventArgs e)
+    {
+        Panel_login.Visible = false;
+        Panel_registo.Visible = false;
+        Panel_Recupera_questao.Visible = true;
+        Panel_Recupera_email.Visible = false;
+
+    }
+
+    protected void LinkButton3_Click(object sender, EventArgs e)
+    {
+        Panel_login.Visible = false;
+        Panel_registo.Visible = false;
+        Panel_Recupera_questao.Visible = false;
+        Panel_Recupera_email.Visible = true;
+
+    }
+
+    protected void LinkButton4_Click(object sender, EventArgs e)
+    {
+        Panel_login.Visible = false;
+        Panel_registo.Visible = true;
+        Panel_Recupera_questao.Visible = false;
+        Panel_Recupera_email.Visible = false;
+
+    }
 }

@@ -6,94 +6,65 @@
     <asp:Panel ID="InsertDados" runat="server">
         <div class="Form">
         <ul>
-            <li>
-                    Nome
-                        <asp:RequiredFieldValidator ID="Val_Nome" runat="server" ErrorMessage="* Nome é obrigatório" ControlToValidate="T_Nome" Display="Dynamic" Text="*" />
-                        <asp:RegularExpressionValidator ID="Val_Nome2" runat="server" ErrorMessage="** Insira um nome válido" ControlToValidate="T_Nome" Display="Dynamic" Text="**" ValidationExpression="^([a-zA-ZçÇãÃâÂÎîÊêáàÁÀÌÍìí\s]{5,100})" />
+            <li style="width: 552px">
+                    <label>Nome:</label>
+                        <asp:RequiredFieldValidator ID="Val_Nome" runat="server" ErrorMessage="* Nome é obrigatório" ControlToValidate="T_Nome" Display="Dynamic" Text="*" ValidationGroup="Formulario"/>
+                        <asp:RegularExpressionValidator ID="Val_Nome2" runat="server" ErrorMessage="** Insira um nome válido" ControlToValidate="T_Nome" Display="Dynamic" Text="**" ValidationExpression="^([a-zA-ZçÇãÃâÂÎîÊêáàÁÀÌÍìí\s]{5,100})" ValidationGroup="Formulario" />
                 
-                <asp:TextBox ID="T_Nome" runat="server" />
-            </li>
-            <li>
-                    Número de Contribuinte
-                        <asp:RequiredFieldValidator ID="Val_Nif_1" runat="server" ErrorMessage="* Insira um Numero de Identificação Fiscal" ControlToValidate="T_Nif" Display="Dynamic" Text="*" />
-                        <asp:RegularExpressionValidator ID="Val_Nif_2" runat="server" ErrorMessage="** Insira um NIF valido com 9 digitos" ControlToValidate="T_Nif" Display="Dynamic" Text="**" ValidationExpression="^(\d{9})$" />
-                        <asp:CustomValidator ID="CustomValidator1" runat="server" ErrorMessage="*** Nif já registado" ControlToValidate="T_Nif" OnServerValidate="CustomValidator1_ServerValidate" Text="***" Display="Dynamic" />
-                    
-                
-                <asp:TextBox ID="T_Nif" runat="server" />
-            </li>
-            <li></li>
-            <li >
-                    Telefone
-                        <asp:RequiredFieldValidator ID="Val_Tel_1" runat="server" ErrorMessage="* Insira um Numero de Telefone ou Telemovel" ControlToValidate="T_Tel" Display="Dynamic" Text="*" />
-                        <asp:RegularExpressionValidator ID="Val_Tel_2" runat="server" ErrorMessage="** Insira um numero VALIDO" ControlToValidate="T_Tel" Display="Dynamic" Text="**" ValidationExpression="^(\d{9})$" />
-                    
-                <asp:TextBox ID="T_Tel" runat="server" />
-            </li>
-            <li>
-                E-mail:
-                    <asp:RequiredFieldValidator ID="EmailRequired" runat="server" ErrorMessage="* Email Obrigatório" ControlToValidate="Email" Display="Dynamic" Text="*" />
-                    <asp:RegularExpressionValidator ID="EmailRequired2" runat="server" ErrorMessage="** Insira um Email Valído" ControlToValidate="Email" Display="Dynamic" Text="**" ValidationExpression="^([a-z0-9_\.-]+\@[\da-z\.-]+\.[a-z\.]{2,6})$" />
-               
-                <asp:TextBox runat="server" ID="Email" />
-            </li>
-            <li>
-                <label>
-                    Localidade
-                        <asp:RequiredFieldValidator ID="V_Freg" runat="server" ErrorMessage="* Selecione a Freguesia" ControlToValidate="Lista_Freguesias" InitialValue="" Display="Dynamic" Text="*" />
-                    
-                </label>
-                <asp:DropDownList ID="Lista_Freguesias" runat="server" />
-            </li>
-            <li></li>
-            <li>
-                <label>
-                    Morada
-                        <asp:RequiredFieldValidator ID="Val_Morada" runat="server" ValidationGroup="CreateUserWizard1" ErrorMessage="* Insira uma Morada" ControlToValidate="T_Nome" Display="Dynamic" Text="*" />
-                        <asp:RegularExpressionValidator ID="Val_Morada2" runat="server" ErrorMessage="** Insira uma Morada válido" ControlToValidate="T_Nome" Display="Dynamic" Text="**" ValidationExpression="^([A-Za-z ÀÈÌÒÙàèìòùÁÉÍÓÚáéíóúÂÊÎÔÛâêîôûÃÕãõçÇ]{2,100}[^\s])$" />
-                    
-                </label>
-                <asp:TextBox ID="T_Morada" runat="server" />
-            </li>
-            <li></li>
-            <li>
-                <label>
-                    Código-postal
-                        <asp:RequiredFieldValidator ID="Val_Cod_Post_1" runat="server" ErrorMessage="* Insira um Codigo de Postal" ControlToValidate="T_Cod_Post" Display="Dynamic" Text="*" />
-                        <asp:RegularExpressionValidator ID="Val_Cod_Post_2" runat="server" ErrorMessage="** Insira um Codigo de Postal VALIDO" ControlToValidate="T_Cod_Post" Display="Dynamic" Text="**" ValidationExpression="\d{4}([\-]\d{3})?" />
-      
-                </label>
-                <asp:TextBox ID="T_Cod_Post" runat="server" />
-            </li>
-            <li></li>
-            <li>
-                <label>
-                    Nome de Utilizador
-                        <asp:RequiredFieldValidator ID="User1" runat="server" ControlToValidate="UserName" ErrorMessage="* Nome de Utilizador é obrigatorio" Display="Dynamic" Text="*" />
-                        <asp:RegularExpressionValidator ID="User2" runat="server" ErrorMessage="** Insira um usermame valido sem carateres especiais e com mais de 3 carateres" ControlToValidate="UserName" Display="Dynamic" Text="**" ValidationExpression="[a-zA-Z0-9_-]{3,30}" />
-                        <asp:CustomValidator ID="User3" runat="server" ErrorMessage="** Utilizador ja se encontra atribuido" ControlToValidate="UserName" OnServerValidate="ValUser_ServerValidate" Text="**" Display="Dynamic" />
-                    
-                </label>
-                <asp:TextBox runat="server" ID="UserName" />
-            </li>
-            <li>
-                <label>Password:
-                    <asp:RequiredFieldValidator ID="PasswordRequired" runat="server" ControlToValidate="Password" ErrorMessage="Password é obrigatoria" ToolTip="Password is required." Display="Dynamic">*</asp:RequiredFieldValidator>
-                </label>
-                <asp:TextBox runat="server" ID="Password" TextMode="Password" />
-            </li>
-            <li>
-                <label>Confirmar Password:
-                    <asp:RequiredFieldValidator ID="ConfirmPasswordRequired" runat="server" ControlToValidate="ConfirmPassword" ErrorMessage="Tem de confirmar as Passwords" Display="Dynamic">*</asp:RequiredFieldValidator>
-                </label>
-                <asp:TextBox runat="server" TextMode="Password" ID="ConfirmPassword"></asp:TextBox>
-                <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="Password" ErrorMessage="As Passwords não sao iguais" ControlToValidate="ConfirmPassword" Display="None" />
-            </li>
-            <li>
-                <br />
-                <asp:Button ID="B_Create_User" runat="server" Text="Criar Utilizador" CausesValidation="false" OnClick="B_Create_User_Click" />
+                <asp:TextBox ID="T_Nome" runat="server" Width="479px" />
             </li>
         </ul>
+            <ul>
+                <li> <label>Telefone:</label>
+                    <asp:RequiredFieldValidator ID="Val_Tel_1" runat="server" ControlToValidate="T_Tel" Display="Dynamic" ErrorMessage="* Insira um Numero de Telefone ou Telemovel" Text="*" ValidationGroup="Formulario" />
+                    <asp:RegularExpressionValidator ID="Val_Tel_2" runat="server" ControlToValidate="T_Tel" Display="Dynamic" ErrorMessage="** Insira um numero VALIDO" Text="**" ValidationExpression="^(\d{9})$" ValidationGroup="Formulario" />
+                    <asp:TextBox ID="T_Tel" runat="server" Width="196px" />
+                    &nbsp;<label>E-mail:</label>
+                    <asp:RequiredFieldValidator ID="EmailRequired1" runat="server" ControlToValidate="Email" Display="Dynamic" ErrorMessage="* Email Obrigatório" Text="*" ValidationGroup="Formulario"/>
+                    <asp:RegularExpressionValidator ID="EmailRequired2" runat="server" ControlToValidate="Email" Display="Dynamic" ErrorMessage="** Insira um Email Valído" Text="**" ValidationExpression="^([a-z0-9_\.-]+\@[\da-z\.-]+\.[a-z\.]{2,6})$" ValidationGroup="Formulario"/>
+                    <asp:TextBox ID="Email" runat="server" Width="196px" />
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <label>
+                    Produto:
+                    <asp:RequiredFieldValidator ID="Val_Produto" runat="server" ControlToValidate="T_Produto" Display="Dynamic" ErrorMessage="* Insira uma Morada" Text="*" ValidationGroup="Formulario" />
+                    <asp:RegularExpressionValidator ID="Val_Produto2" runat="server" ControlToValidate="T_Produto" Display="Dynamic" ErrorMessage="** Insira uma Morada válido" Text="**" ValidationExpression="^([A-Za-z ÀÈÌÒÙàèìòùÁÉÍÓÚáéíóúÂÊÎÔÛâêîôûÃÕãõçÇ]{2,100}[^\s])$" ValidationGroup="Formulario"/>
+                    </label>
+                    <asp:TextBox ID="T_Produto" runat="server" Width="198px" />
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <label>
+                    Tipo de produto
+                    <asp:RequiredFieldValidator ID="V_Prod" runat="server" ControlToValidate="Lista_Tipo_de_produtos" Display="Dynamic" ErrorMessage="* Selecione a Freguesia" InitialValue="" Text="*" ValidationGroup="Formulario" />
+                    </label>
+                    <asp:DropDownList ID="Lista_Tipo_de_produtos" runat="server" Height="28px" >
+                        <asp:ListItem Value="1">Telemoveis/acessorios</asp:ListItem>
+                        <asp:ListItem Value="2">Computadores/componentes</asp:ListItem>
+                        <asp:ListItem Value="3">Perifericos</asp:ListItem>
+                        <asp:ListItem Value="4">Cablagem</asp:ListItem>
+                    </asp:DropDownList>
+                    &nbsp;</li>
+            </ul>
+            <ul>
+                <li>
+                    <label>
+                    Descrição:
+                    <asp:RequiredFieldValidator ID="DescricaoReq" runat="server" ControlToValidate="T_descricao" Display="Dynamic" ErrorMessage="* Coloque uma descrição do produto. Estado do mesmo, condições gerais, algumas considerações que ache importantes"  ValidationGroup="Formulario">*</asp:RequiredFieldValidator>
+                    </label>
+                </li>
+                
+                    <asp:TextBox ID="T_descricao" runat="server" Height="85px" TextMode="MultiLine" Width="523px" />
+                
+                    <asp:ValidationSummary ID="ValidationSummary1" runat="server" CssClass="text-danger" ValidationGroup="Formulario"/>
+            </ul>
+            <p>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Button ID="B_submeter_produto" runat="server" OnClick="B_Create_User_Click" Text="Enviar formulario" ValidateRequestMode="Enabled" ValidationGroup="Formulario" />
+            </p>
         </div>
     </asp:Panel>
 </asp:Content>

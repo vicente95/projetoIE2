@@ -1,62 +1,277 @@
 ﻿<%@ Page Title="Log in" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="Login.aspx.cs" Inherits="Account_Login" Async="true" %>
 
-<%@ Register Src="~/Account/OpenAuthProviders.ascx" TagPrefix="uc" TagName="OpenAuthProviders" %>
-
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
-    <h2><%: Title %>.</h2>
-
-    <div class="row">
-        <div class="col-md-8">
-            <section id="loginForm">
-                <div class="form-horizontal">
-                    <h4>Use a local account to log in.</h4>
-                    <hr />
-                    <asp:PlaceHolder runat="server" ID="ErrorMessage" Visible="false">
-                        <p class="text-danger">
-                            <asp:Literal runat="server" ID="FailureText" />
-                        </p>
-                    </asp:PlaceHolder>
-                    <div class="form-group">
-                        <asp:Label runat="server" AssociatedControlID="UserName" CssClass="col-md-2 control-label">User name</asp:Label>
-                        <div class="col-md-10">
-                            <asp:TextBox runat="server" ID="UserName" CssClass="form-control" />
-                            <asp:RequiredFieldValidator runat="server" ControlToValidate="UserName"
-                                CssClass="text-danger" ErrorMessage="The user name field is required." />
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <asp:Label runat="server" AssociatedControlID="Password" CssClass="col-md-2 control-label">Password</asp:Label>
-                        <div class="col-md-10">
-                            <asp:TextBox runat="server" ID="Password" TextMode="Password" CssClass="form-control" />
-                            <asp:RequiredFieldValidator runat="server" ControlToValidate="Password" CssClass="text-danger" ErrorMessage="The password field is required." />
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">
-                            <div class="checkbox">
-                                <asp:CheckBox runat="server" ID="RememberMe" />
-                                <asp:Label runat="server" AssociatedControlID="RememberMe">Remember me?</asp:Label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">
-                            <asp:Button runat="server" OnClick="LogIn" Text="Log in" CssClass="btn btn-default" />
-                        </div>
-                    </div>
-                </div>
-                <p>
-                    <asp:HyperLink runat="server" ID="RegisterHyperLink" ViewStateMode="Disabled">Register</asp:HyperLink>
-                    if you don't have a local account.
-                </p>
-            </section>
-        </div>
-
-        <div class="col-md-4">
-            <section id="socialLoginForm">
-                <uc:openauthproviders runat="server" id="OpenAuthLogin" />
-            </section>
-        </div>
+       <h2>Area do utilizador</h2>
+    <nav>
+<ul id="navmenu">
+	<li><asp:LinkButton ID="LinkButton3" runat="server" Text="Fazer Login" OnClick="LinkButton1_Click"> </asp:LinkButton> </li>
+	<li><a>Recuperar palavra-passe</a><span class="darrow">&#9660;</span>
+		<ul class="sub1">
+			<li><asp:LinkButton ID="LinkButton1" runat="server" Text="Questão de segurança" OnClick="LinkButton2_Click"></asp:LinkButton> </li>
+			<li><asp:LinkButton ID="LinkButton2" runat="server" Text="Para o email" OnClick="LinkButton3_Click"> </asp:LinkButton></li>
+		</ul>
+	</li>
+	<li><asp:LinkButton ID="LinkButton4" runat="server" Text="Registo" OnClick="LinkButton4_Click"> </asp:LinkButton>
+	</li>
+</ul>
+</nav>
+    <br />
+    <hr />
+    <asp:Panel ID="Panel_registo" runat="server">
+    <div class="form-horizontal">
+        <h4><span style="color:grey; font-weight: 700;"><em style="background-color: #E6F0F3">Esta no registo:</em></span> Criar nova conta:</h4>
+        <hr />
+    
+    <p class="text-danger">
+        <asp:Literal runat="server" ID="ErrorMessage0" Text="* Campos que tem de ser prenchidos com asterisco" />
+    </p>
+        <asp:ValidationSummary runat="server" CssClass="text-danger" ValidationGroup="CreateUserWizard1" /><br />
+        <h5><strong>Para faturação e possivel entrega de encomenda:</strong></h5>
     </div>
+    <div class="form-group">
+        <div class="form-inline">
+            <h5>Morada:</h5>
+            <asp:TextBox ID="Morada" runat="server" Width="341px"></asp:TextBox>&nbsp;<asp:RequiredFieldValidator ID="ConfirmPasswordRequired0" runat="server" ControlToValidate="Morada" ErrorMessage="A morada é necessaria" ToolTip="A morada é necessaria" ValidationGroup="CreateUserWizard1" CssClass="text-danger">*</asp:RequiredFieldValidator>
+                            <asp:RegularExpressionValidator ID="Val_Morada" runat="server" ControlToValidate="Morada" Display="Dynamic" ErrorMessage="** Insira uma Morada válida Ex: rua das cucuias n56 Almada" Text="**" ValidationExpression="^([A-Za-z0-9 ÀÈÌÒÙàèìòùÁÉÍÓÚáéíóúÂÊÎÔÛâêîôûÃÕãõçÇ ]{2,100}[^\s])$" ValidationGroup="CreateUserWizard1" />
+                            </div>
+        <div class="form-inline">
+            <h5>Codigo-postal:</h5>
+            <asp:TextBox ID="cod1" runat="server" Width="100px"></asp:TextBox>&nbsp;<asp:TextBox ID="cod2" runat="server" Width="46px"></asp:TextBox>&nbsp;<asp:TextBox ID="cod3" runat="server" Width="187px"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="Codigopostal1" runat="server" ControlToValidate="cod1" ErrorMessage="O primeiro campo do codigo postal é necessario" ToolTip="O primeiro campo do codigo postal é necessario" ValidationGroup="CreateUserWizard1" CssClass="text-danger">*</asp:RequiredFieldValidator>
+            <asp:RequiredFieldValidator ID="Codigopostal2" runat="server" ControlToValidate="cod2" ErrorMessage="O segundo campo do codigo postal é necessario" ToolTip="O segundo campo do codigo postal é necessario" ValidationGroup="CreateUserWizard1" CssClass="text-danger">*</asp:RequiredFieldValidator>
+            <asp:RequiredFieldValidator ID="Codigopostal3" runat="server" ControlToValidate="cod3" ErrorMessage="O terceiro campo do codigo postal é necessario" ToolTip="O terceiro campo do codigo postal é necessario" ValidationGroup="CreateUserWizard1" CssClass="text-danger">*</asp:RequiredFieldValidator>
+            <asp:RegularExpressionValidator ID="Val_Cod_Post" runat="server" ErrorMessage="** Insira 4 digitos no primeiro campo do codigo postal" ControlToValidate="cod1" Display="Dynamic" Text="**" ValidationExpression="\d{4}" ValidationGroup="CreateUserWizard1" />
+            <asp:RegularExpressionValidator ID="Val_Cod_Post_2" runat="server" ErrorMessage="** Insira 3 digitos no segundo campo do codigo postal" ControlToValidate="cod2" Display="Dynamic" Text="**" ValidationExpression="\d{4}" ValidationGroup="CreateUserWizard1" />
+            <asp:RegularExpressionValidator ID="Val_Cod_Post_3" runat="server" ControlToValidate="cod3" Display="Dynamic" ErrorMessage="** Insira o 3 campo do codigo postal, local a que diz respeito" Text="**" ValidationExpression="^([A-Za-z0-9 ÀÈÌÒÙàèìòùÁÉÍÓÚáéíóúÂÊÎÔÛâêîôûÃÕãõçÇ ]{2,100}[^\s])$" ValidationGroup="CreateUserWizard1" />
+        </div>
+        <div class="form-inline">
+            <h5>Localidade:</h5>
+            <asp:TextBox ID="Loca" runat="server" Width="341px"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="localidade" runat="server" ControlToValidate="Loca" ErrorMessage="A Localidade é necessaria" ToolTip="A Localidade é necessaria" ValidationGroup="CreateUserWizard1" CssClass="text-danger">*</asp:RequiredFieldValidator>
+                                <asp:RegularExpressionValidator ID="Val_localidade" runat="server" ControlToValidate="Loca" Display="Dynamic" ErrorMessage="** Insira uma Morada válida" Text="**" ValidationExpression="^([A-Za-z0-9 ÀÈÌÒÙàèìòùÁÉÍÓÚáéíóúÂÊÎÔÛâêîôûÃÕãõçÇ ]{2,100}[^\s])$" ValidationGroup="CreateUserWizard1" />
+                            </div>
+        <div class="container">
+
+</div>
+    </div> <br />   
+    <h5> <strong>Dados relativos a conta:</strong></h5>
+        <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" OnCreatedUser="CreateUserWizard1_CreatedUser">
+        <WizardSteps>
+            <asp:CreateUserWizardStep ID="CreateUserWizardStep1" runat="server">
+                <ContentTemplate>
+                    <table>
+                        <tr>
+                            <td align="right">
+                                <asp:Label ID="UserNameLabel" runat="server" AssociatedControlID="UserName"><h5>Email/Username:</h5></asp:Label>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="UserName" runat="server" CssClass="form-control" Width="370px" ></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="UserNameRequired" runat="server" ControlToValidate="UserName" ErrorMessage="O Email/username é necessario" ToolTip="User Name is required." ValidationGroup="CreateUserWizard1" CssClass="text-danger">*</asp:RequiredFieldValidator>
+                                <asp:RegularExpressionValidator ID="EmailRequired2" runat="server" ControlToValidate="Username" Display="Dynamic" ErrorMessage="** Insira um Email Valído" Text="**" ValidationExpression="^([a-z0-9_\.-]+\@[\da-z\.-]+\.[a-z\.]{2,6})$" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right">
+                                <asp:Label ID="PasswordLabel" runat="server" AssociatedControlID="Password"><h5>Palavra-passe:</h5></asp:Label>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="Password" runat="server" TextMode="Password" CssClass="form-control" Width="370px"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="PasswordRequired" runat="server" ControlToValidate="Password" ErrorMessage="A palavra passe tem que ter mais de 8 caracteres." ToolTip="Password is required." ValidationGroup="CreateUserWizard1" CssClass="text-danger">*</asp:RequiredFieldValidator>
+                                <asp:RegularExpressionValidator ID="Val_password" runat="server" ControlToValidate="Password" Display="Dynamic" ErrorMessage="** Insira uma palavra passe pelo menos com 8 caracteres" Text="**" ValidationExpression="^([A-Za-z0-9 ÀÈÌÒÙàèìòùÁÉÍÓÚáéíóúÂÊÎÔÛâêîôûÃÕãõçÇ ]{7,100}[^\s])$" ValidationGroup="CreateUserWizard1" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right">
+                                <asp:Label ID="ConfirmPasswordLabel" runat="server" AssociatedControlID="ConfirmPassword"><h5>Confirmar a palavra-passe:</h5></asp:Label>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="ConfirmPassword" runat="server" TextMode="Password" CssClass="form-control" Width="370px"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="ConfirmPasswordRequired" runat="server" ControlToValidate="ConfirmPassword" ErrorMessage="Confirme a palavra-passe" ToolTip="Confirm Password is required." ValidationGroup="CreateUserWizard1" CssClass="text-danger">*</asp:RequiredFieldValidator>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right">
+                                <asp:Label ID="EmailLabel" runat="server" AssociatedControlID="Email"><h5>Nome:</h5></asp:Label>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="Email" runat="server" CssClass="form-control" Width="370px"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="EmailRequired" runat="server" ControlToValidate="Email" ErrorMessage="O nome é necessario" ToolTip="O nome é necessario" ValidationGroup="CreateUserWizard1" CssClass="text-danger">*</asp:RequiredFieldValidator>
+                                <asp:RegularExpressionValidator ID="Val_Nome" runat="server" ControlToValidate="Email" Display="Dynamic" ErrorMessage="** Insira um nome válido" Text="**" ValidationExpression="^([a-zA-ZçÇãÃâÂÎîÊêáàÁÀÌÍìí\s]{5,100})" ValidationGroup="CreateUserWizard1" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right">
+                                <asp:Label ID="Label2" runat="server" AssociatedControlID="Email"><h5>Telefone:</h5></asp:Label>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="Telefone" runat="server" CssClass="form-control" Width="370px"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="Telefone" ErrorMessage="O numero de telefone é necessario" ValidationGroup="CreateUserWizard1" CssClass="text-danger">*</asp:RequiredFieldValidator>
+                                <asp:RegularExpressionValidator ID="Val_Tel" runat="server" ErrorMessage="** Insira um numero de telefone VALIDO" ControlToValidate="Telefone" Display="Dynamic" Text="**" ValidationExpression="^(\d{9})$" ValidationGroup="CreateUserWizard1" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right">
+                                <asp:Label ID="Label1" runat="server" AssociatedControlID="Email"><h5>Numero de contribuinte:</h5></asp:Label>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="n_contribuinte" runat="server" CssClass="form-control" Width="370px"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="Email" ErrorMessage="Numero de contribuinte é necessario" ToolTip="Numero de contribuinte é necessario" ValidationGroup="CreateUserWizard1" CssClass="text-danger">*</asp:RequiredFieldValidator>
+                                <asp:RegularExpressionValidator ID="Val_Nif_2" runat="server" ControlToValidate="n_contribuinte" Display="Dynamic" ErrorMessage="** Insira um NIF valido com 9 digitos" Text="**" ValidationExpression="^(\d{9})$" ValidationGroup="CreateUserWizard1" />
+                                <asp:CustomValidator ID="CustomValidator1" runat="server" ControlToValidate="n_contribuinte" Display="Dynamic" ErrorMessage="*** Nif já registado" OnServerValidate="CustomValidator1_ServerValidate" Text="***" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right">
+                                <asp:Label ID="QuestionLabel" runat="server" AssociatedControlID="Question"><h5>Questão de segurança:</h5></asp:Label>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="Question" runat="server" CssClass="form-control" Width="370px"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="QuestionRequired" runat="server" ControlToValidate="Question" ErrorMessage="A questão de segurança é necessaria." ToolTip="Security question is required." ValidationGroup="CreateUserWizard1" CssClass="text-danger">*</asp:RequiredFieldValidator>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right">
+                                <asp:Label ID="AnswerLabel" runat="server" AssociatedControlID="Answer"><h5>Resposta:</h5></asp:Label>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="Answer" runat="server" Width="370px" CssClass="form-control"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="AnswerRequired" runat="server" ControlToValidate="Answer" ErrorMessage="Responda a questão de segurança" ToolTip="Security answer is required." ValidationGroup="CreateUserWizard1" CssClass="text-danger">*</asp:RequiredFieldValidator>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" colspan="2">
+                                <asp:CompareValidator ID="PasswordCompare" runat="server" ControlToCompare="Password" ControlToValidate="ConfirmPassword" Display="Dynamic" ErrorMessage="A palavra passe e a confirmação tem de ser iguais." ValidationGroup="CreateUserWizard1" CssClass="text-danger"></asp:CompareValidator>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" colspan="2" style="color:Red;">
+                                <asp:Literal ID="ErrorMessage" runat="server" EnableViewState="False"></asp:Literal>
+                            </td>
+                        </tr>
+                    </table>
+                </ContentTemplate>
+            </asp:CreateUserWizardStep>
+            <asp:CompleteWizardStep ID="CompleteWizardStep1" runat="server">
+            </asp:CompleteWizardStep>
+        </WizardSteps>
+    </asp:CreateUserWizard>
+    </asp:Panel>
+
+    <asp:Panel ID="Panel_Recupera_questao" runat="server">
+        <h4><span style="color:grey; font-weight: 700;"><em style="background-color: #E6F0F3">Esta na recuperação da palavra passe pela Questão de segurança</em></span> Responda aos seguintes campos:</h4>
+        <hr />
+
+        <asp:PasswordRecovery ID="PasswordRecovery1" runat="server" AnswerRequiredErrorMessage="Coloque a resposta a questão" BackColor="#F7F7DE" BorderColor="#CCCC99" BorderPadding="2" BorderStyle="Solid" BorderWidth="1px" Font-Names="Verdana" Font-Size="10pt" UserNameRequiredErrorMessage="Insira o Email/username">
+            <TitleTextStyle BackColor="#6B696B" Font-Bold="True" ForeColor="#FFFFFF" />
+            <UserNameTemplate>
+                <table cellpadding="2" cellspacing="0" style="border-collapse:collapse;">
+                    <tr>
+                        <td>
+                            <table cellpadding="0">
+                                <tr>
+                                    <td align="center" colspan="2" style="color:White;background-color:#6B696B;font-weight:bold;"><span style="color: rgb(255, 255, 255); font-family: Verdana; font-size: 13.3333px; font-style: normal; font-variant: normal; font-weight: bold; letter-spacing: normal; line-height: 19.0476px; orphans: auto; text-align: -webkit-center; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(107, 105, 107);">Esqueceu-se da Palavra-passe?</span></td>
+                                </tr>
+                                <tr>
+                                    <td align="center" colspan="2"><span style="color: rgb(51, 51, 51); font-family: Verdana; font-size: 13.3333px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 19.0476px; orphans: auto; text-align: -webkit-center; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(247, 247, 222);">Introduza o Nome de Utilizador para receber a palavra-passe.</span></td>
+                                </tr>
+                                <tr>
+                                    <td align="right">
+                                        <asp:Label ID="UserNameLabel" runat="server" AssociatedControlID="UserName">Email/username:</asp:Label>
+                                    </td>
+                                    <td>
+                                        <asp:TextBox ID="UserName" runat="server"></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="UserNameRequired" runat="server" ControlToValidate="UserName" ErrorMessage="Insira o Email/username" ToolTip="Insira o Email/username" ValidationGroup="PasswordRecovery1">*</asp:RequiredFieldValidator>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center" colspan="2" style="color:Red;">
+                                        <asp:Literal ID="FailureText" runat="server" EnableViewState="False"></asp:Literal>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right" colspan="2">
+                                        <asp:Button ID="SubmitButton" runat="server" CommandName="Submit" Text="Submit" ValidationGroup="PasswordRecovery1" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </UserNameTemplate>
+        </asp:PasswordRecovery>
+
+
+        <br />
+
+
+    </asp:Panel>
+
+
+    <asp:Panel ID="Panel_Recupera_email" runat="server">
+        <h4><span style="color:grey; font-weight: 700;"><em style="background-color: #E6F0F3">Esta na recuperação da palavra passe para o seu Email</em></span> Responda aos seguintes campos:</h4>
+        <hr />
+
+    <asp:PasswordRecovery ID="PasswordRecovery2" runat="server" AnswerRequiredErrorMessage="Coloque a resposta a questão" BackColor="#F7F7DE" BorderColor="#CCCC99" BorderPadding="2" BorderStyle="Solid" BorderWidth="1px" Font-Names="Verdana" Font-Size="10pt" UserNameRequiredErrorMessage="Insira o Email/username">
+            <TitleTextStyle BackColor="#6B696B" Font-Bold="True" ForeColor="#FFFFFF" />
+            <UserNameTemplate>
+                <table cellpadding="2" cellspacing="0" style="border-collapse:collapse;">
+                    <tr>
+                        <td>
+                            <table cellpadding="0">
+                                <tr>
+                                    <td align="center" colspan="2" style="color:White;background-color:#6B696B;font-weight:bold;"><span style="color: rgb(255, 255, 255); font-family: Verdana; font-size: 13.3333px; font-style: normal; font-variant: normal; font-weight: bold; letter-spacing: normal; line-height: 19.0476px; orphans: auto; text-align: -webkit-center; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(107, 105, 107);">Esqueceu-se da Palavra-passe?</span></td>
+                                </tr>
+                                <tr>
+                                    <td align="center" colspan="2"><span style="color: rgb(51, 51, 51); font-family: Verdana; font-size: 13.3333px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 19.0476px; orphans: auto; text-align: -webkit-center; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(247, 247, 222);">Introduza o Nome de Utilizador para receber a palavra-passe.</span></td>
+                                </tr>
+                                <tr>
+                                    <td align="right">
+                                        <asp:Label ID="UserNameLabel" runat="server" AssociatedControlID="UserName">Email/username:</asp:Label>
+                                    </td>
+                                    <td>
+                                        <asp:TextBox ID="UserName" runat="server"></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="UserNameRequired" runat="server" ControlToValidate="UserName" ErrorMessage="Insira o Email/username" ToolTip="Insira o Email/username" ValidationGroup="PasswordRecovery2">*</asp:RequiredFieldValidator>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center" colspan="2" style="color:Red;">
+                                        <asp:Literal ID="FailureText" runat="server" EnableViewState="False"></asp:Literal>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right" colspan="2">
+                                        <asp:Button ID="SubmitButton" runat="server" CommandName="Submit" Text="Submit" ValidationGroup="PasswordRecovery2" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </UserNameTemplate>
+        </asp:PasswordRecovery>
+
+
+        <br />
+
+
+    </asp:Panel>
+
+    <asp:Panel ID="Panel_login" runat="server">
+        <h4><span style="color:grey; font-weight: 700;"><em style="background-color: #E6F0F3">Esta no Login</em></span> Introduza os seus dados:</h4>
+        <hr />
+
+        <asp:Login ID="Login1" runat="server" BackColor="#F7F7DE" BorderColor="#CCCC99" BorderStyle="Solid" BorderWidth="1px" Font-Names="Verdana" Font-Size="10pt" CreateUserText="Não tem conta? Crie a sua conta aqui">
+            <TitleTextStyle BackColor="#6B696B" Font-Bold="True" ForeColor="#FFFFFF" />
+        </asp:Login>
+
+
+        <br />
+
+
+    </asp:Panel>
+
+
+
+    <br />
 </asp:Content>
 
