@@ -69,21 +69,21 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#">Inicio</a>
+                        <a href="/Pagina_Inicial.aspx">Inicio</a>
                     </li>
                     <li>
-                        <a href="#">Compra de equipamentos</a>
+                        <a href="/Compra_equipamentos.aspx">Compra de equipamentos</a>
                     </li>
                     <li>
                         <a href="#">Contactos</a>
                     </li>
                     <li>
-                        <a href="#">Login</a>
+                        <a href="/Conta/Login.aspx">Login</a>
                     </li>
                     <li class="barra">
                          <asp:LoginView ID="LoginView1" runat="server">
                     <AnonymousTemplate>
-                          <a href="#">Registar</a>
+                          <a href="/Conta/Registo.aspx">Registar</a>
                     </AnonymousTemplate>
                     <LoggedInTemplate>
                          &nbsp;Bem vindo&nbsp;
@@ -189,7 +189,7 @@
                         </asp:Menu>
                         
                         <a class="list-group-item " ><p >✉<span class="auto-style2">Tens produtos em casa do mesmo tipo que gostavas de vender?<br />
-                            Poderá contactar-nos por causa desse mesmo equipamento na secção da barra do nosso site ou em</span><a class="btn btn-default" href="#">Compra de equipamentos &raquo;</a></p>
+                            Poderá contactar-nos por causa desse mesmo equipamento na secção da barra do nosso site ou em</span><a class="btn btn-default" href="/Compra_equipamentos.aspx">Compra de equipamentos &raquo;</a></p>
                         </a>
                         
                 </div>

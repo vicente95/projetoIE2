@@ -260,7 +260,7 @@
         <h4><span style="color:grey; font-weight: 700;"><em style="background-color: #E6F0F3">Esta no Login</em></span> Introduza os seus dados:</h4>
         <hr />
 
-        <asp:Login ID="Login1" runat="server" BackColor="#F7F7DE" BorderColor="#CCCC99" BorderStyle="Solid" BorderWidth="1px" Font-Names="Verdana" Font-Size="10pt">
+        <asp:Login ID="Login1" runat="server" BackColor="#F7F7DE" BorderColor="#CCCC99" BorderStyle="Solid" BorderWidth="1px" Font-Names="Verdana" Font-Size="10pt" CreateUserText="Não tem conta? Crie a sua conta aqui" CreateUserUrl="~/Conta/Registo.aspx">
             <TitleTextStyle BackColor="#6B696B" Font-Bold="True" ForeColor="#FFFFFF" />
         </asp:Login>
 
