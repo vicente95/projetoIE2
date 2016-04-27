@@ -30,13 +30,16 @@
     </div>
     <div class="form-group">
         <div class="form-inline">
-            <h5>Morada:</h5>
-            <asp:TextBox ID="Morada" runat="server" Width="341px"></asp:TextBox>&nbsp;<asp:RequiredFieldValidator ID="ConfirmPasswordRequired0" runat="server" ControlToValidate="Morada" ErrorMessage="A morada é necessaria" ToolTip="A morada é necessaria" ValidationGroup="CreateUserWizard1" CssClass="text-danger">*</asp:RequiredFieldValidator>
+            <h5>&nbsp;Morada:</h5>
+            &nbsp;<asp:TextBox ID="Morada" runat="server" CssClass="btn btn-default" Width="341px"></asp:TextBox>
+            &nbsp;<asp:RequiredFieldValidator ID="ConfirmPasswordRequired0" runat="server" ControlToValidate="Morada" ErrorMessage="A morada é necessaria" ToolTip="A morada é necessaria" ValidationGroup="CreateUserWizard1" CssClass="text-danger">*</asp:RequiredFieldValidator>
                             <asp:RegularExpressionValidator ID="Val_Morada" runat="server" ControlToValidate="Morada" Display="Dynamic" ErrorMessage="** Insira uma Morada válida Ex: rua das cucuias n56 Almada" Text="**" ValidationExpression="^([A-Za-z0-9 ÀÈÌÒÙàèìòùÁÉÍÓÚáéíóúÂÊÎÔÛâêîôûÃÕãõçÇ ]{2,100}[^\s])$" ValidationGroup="CreateUserWizard1" />
                             </div>
         <div class="form-inline">
-            <h5>Codigo-postal:</h5>
-            <asp:TextBox ID="cod1" runat="server" Width="100px"></asp:TextBox>&nbsp;<asp:TextBox ID="cod2" runat="server" Width="46px"></asp:TextBox>&nbsp;<asp:TextBox ID="cod3" runat="server" Width="187px"></asp:TextBox>
+            <h5>&nbsp;Codigo-postal:</h5>
+            &nbsp; <asp:TextBox ID="cod1" runat="server" Width="100px" CssClass="btn btn-default list-inline"></asp:TextBox>
+            &nbsp;<asp:TextBox ID="cod2" runat="server" Width="46px" CssClass="btn btn-default list-inline"></asp:TextBox>
+            &nbsp;<asp:TextBox ID="cod3" runat="server" Width="187px" CssClass="btn btn-default list-inline"></asp:TextBox>
             <asp:RequiredFieldValidator ID="Codigopostal1" runat="server" ControlToValidate="cod1" ErrorMessage="O primeiro campo do codigo postal é necessario" ToolTip="O primeiro campo do codigo postal é necessario" ValidationGroup="CreateUserWizard1" CssClass="text-danger">*</asp:RequiredFieldValidator>
             <asp:RequiredFieldValidator ID="Codigopostal2" runat="server" ControlToValidate="cod2" ErrorMessage="O segundo campo do codigo postal é necessario" ToolTip="O segundo campo do codigo postal é necessario" ValidationGroup="CreateUserWizard1" CssClass="text-danger">*</asp:RequiredFieldValidator>
             <asp:RequiredFieldValidator ID="Codigopostal3" runat="server" ControlToValidate="cod3" ErrorMessage="O terceiro campo do codigo postal é necessario" ToolTip="O terceiro campo do codigo postal é necessario" ValidationGroup="CreateUserWizard1" CssClass="text-danger">*</asp:RequiredFieldValidator>
@@ -45,14 +48,11 @@
             <asp:RegularExpressionValidator ID="Val_Cod_Post_3" runat="server" ControlToValidate="cod3" Display="Dynamic" ErrorMessage="** Insira o 3 campo do codigo postal, local a que diz respeito" Text="**" ValidationExpression="^([A-Za-z0-9 ÀÈÌÒÙàèìòùÁÉÍÓÚáéíóúÂÊÎÔÛâêîôûÃÕãõçÇ ]{2,100}[^\s])$" ValidationGroup="CreateUserWizard1" />
         </div>
         <div class="form-inline">
-            <h5>Localidade:</h5>
-            <asp:TextBox ID="Loca" runat="server" Width="341px"></asp:TextBox>
+            <h5>&nbsp;Localidade:</h5>
+            &nbsp;<asp:TextBox ID="Loca" runat="server" Width="341px" CssClass="btn btn-default"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="localidade" runat="server" ControlToValidate="Loca" ErrorMessage="A Localidade é necessaria" ToolTip="A Localidade é necessaria" ValidationGroup="CreateUserWizard1" CssClass="text-danger">*</asp:RequiredFieldValidator>
                                 <asp:RegularExpressionValidator ID="Val_localidade" runat="server" ControlToValidate="Loca" Display="Dynamic" ErrorMessage="** Insira uma Morada válida" Text="**" ValidationExpression="^([A-Za-z0-9 ÀÈÌÒÙàèìòùÁÉÍÓÚáéíóúÂÊÎÔÛâêîôûÃÕãõçÇ ]{2,100}[^\s])$" ValidationGroup="CreateUserWizard1" />
                             </div>
-        <div class="container">
-
-</div>
     </div> <br />   
     <h5> <strong>Dados relativos a conta:</strong></h5>
         <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" OnCreatedUser="CreateUserWizard1_CreatedUser">
@@ -65,7 +65,7 @@
                                 <asp:Label ID="UserNameLabel" runat="server" AssociatedControlID="UserName"><h5>Email/Username:</h5></asp:Label>
                             </td>
                             <td>
-                                <asp:TextBox ID="UserName" runat="server" CssClass="form-control" Width="370px" ></asp:TextBox>
+                                <asp:TextBox ID="UserName" runat="server" CssClass="form-control" Width="370px"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="UserNameRequired" runat="server" ControlToValidate="UserName" ErrorMessage="O Email/username é necessario" ToolTip="User Name is required." ValidationGroup="CreateUserWizard1" CssClass="text-danger">*</asp:RequiredFieldValidator>
                                 <asp:RegularExpressionValidator ID="EmailRequired2" runat="server" ControlToValidate="Username" Display="Dynamic" ErrorMessage="** Insira um Email Valído" Text="**" ValidationExpression="^([a-z0-9_\.-]+\@[\da-z\.-]+\.[a-z\.]{2,6})$" />
                             </td>
