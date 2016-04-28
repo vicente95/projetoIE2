@@ -75,7 +75,7 @@
                         <a href="/Compra_equipamentos.aspx">Compra de equipamentos</a>
                     </li>
                     <li>
-                        <a href="#">Contactos</a>
+                        <a href="/Contact.aspx">Contactos</a>
                     </li>
                     <li>
                         <a href="/Conta/Login.aspx">Login</a>

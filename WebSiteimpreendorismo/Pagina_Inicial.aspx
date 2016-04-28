@@ -16,13 +16,13 @@
                             </ol>
                             <div class="carousel-inner">
                                 <div class="item active">
-                                    <img class="slide-image" src="http://placehold.it/800x300" alt="">
+                                    <img class="slide-image"  src="Fotos/iphone4f2.PNG" alt="">
                                 </div>
                                 <div class="item">
-                                    <img class="slide-image" src="http://placehold.it/800x300" alt="">
+                                    <img class="slide-image" src="Fotos/iphone4f3.PNG"" alt="">
                                 </div>
                                 <div class="item">
-                                    <img class="slide-image" src="http://placehold.it/800x300" alt="">
+                                    <img class="slide-image" src="Fotos/iphone4f1.PNG"" alt="">
                                 </div>
                             </div>
                             <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
@@ -40,10 +40,10 @@
 
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
-                            <img src="http://placehold.it/320x150" alt="">
+                            <img src="Fotos/iphone4f2.PNG" alt="">
                             <div class="caption">
-                                <h4 class="pull-right">24.99€</h4>
-                                <h4><a href="#">Produto 1</a>
+                                <h4 class="pull-right">120€</h4>
+                                <h4><a href="#">Iphone 4S</a>
                                 </h4>
                                 <p>Descrição<a target="_blank" href="http://www.bootsnipp.com"></a>.</p>
                             </div>
@@ -52,10 +52,10 @@
 
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
-                            <img src="http://placehold.it/320x150" alt="">
+                            <img src="Fotos/ratoApple2.PNG" alt="">
                             <div class="caption">
-                                <h4 class="pull-right">64.99€</h4>
-                                <h4><a href="#">Produto 2</a>
+                                <h4 class="pull-right">40€</h4>
+                                <h4><a href="#">Magic Mouse Apple</a>
                                 </h4>
                                 <p>Descrição</p>
                             </div>
@@ -98,15 +98,6 @@
                         </div>
                     </div>
 
-                    <div class="col-sm-4 col-lg-4 col-md-4">
-                        <h4>
-                            Por aqui texto defenir quantos itens por pagina
-                        </h4>
-                        <a class="btn btn-primary" target="_blank" href="http://maxoffsky.com/code-blog/laravel-shop-tutorial-1-building-a-review-system/">Ver isto</a>
-                        <br />
-                        <br />
-                        
-                    </div>
 
                 </div>
         </div>
