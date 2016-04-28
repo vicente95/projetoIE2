@@ -6,10 +6,10 @@
     <address>
         Para nos encontrar para negócio, temos dois sitios de preferência, em baixo temos as nossas áreas de preferência:<br />
         - Zona de Coimbra e arredores do Distrito (Mapa em baixo)<br /><br />
-            <img width="700" height="500" src="Fotos/coimbra.PNG" />
+            <img width="750" height="550" src="Fotos/coimbra.PNG" />
         <br /><br />
         - Zona de Braga e arredores do Distrito (Mapa em baixo)<br /><br />
-            <img width="800" height="500" src="Fotos/braga.PNG" />
+            <img width="750" height="550" src="Fotos/braga.PNG" />
     </address>
 
     <address>
