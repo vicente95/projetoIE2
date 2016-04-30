@@ -19,10 +19,10 @@
                                     <img class="slide-image"  src="Fotos/iphone4f2.PNG" alt="">
                                 </div>
                                 <div class="item">
-                                    <img class="slide-image" src="Fotos/iphone4f3.PNG"" alt="">
+                                    <img class="slide-image" src="Fotos/ratoApple2.PNG" alt="">
                                 </div>
                                 <div class="item">
-                                    <img class="slide-image" src="Fotos/iphone4f1.PNG"" alt="">
+                                    <img class="slide-image" src="Fotos/nokia1.PNG" alt="">
                                 </div>
                             </div>
                             <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
@@ -45,7 +45,7 @@
                                 <h4 class="pull-right">120€</h4>
                                 <h4><a href="#">Iphone 4S</a>
                                 </h4>
-                                <p>Descrição<a target="_blank" href="http://www.bootsnipp.com"></a>.</p>
+                                <p>Iphone 4s com bom estado e pouco uso. Capacidade de 16GB.<a target="_blank" href="http://www.bootsnipp.com"></a>.</p>
                             </div>
                         </div>
                     </div>
@@ -57,43 +57,55 @@
                                 <h4 class="pull-right">40€</h4>
                                 <h4><a href="#">Magic Mouse Apple</a>
                                 </h4>
-                                <p>Descrição</p>
+                                <p>Rato Apple com pouco uso e em bom estado.</p>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
-                            <img src="http://placehold.it/320x150" alt="">
+                            <img src="Fotos/disco1.PNG" alt="">
                             <div class="caption">
-                                <h4 class="pull-right">74.99€</h4>
-                                <h4><a href="#">Produto 3</a>
+                                <h4 class="pull-right">40€</h4>
+                                <h4><a href="#">Disco Rígido WD 3.5</a>
                                 </h4>
-                                <p>Descrição</p>
+                                <p>Disco para PC fixo (3.5) com capacidade de 1TB</p>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
-                            <img src="http://placehold.it/320x150" alt="">
+                            <img src="Fotos/nokia1.PNG" alt="">
                             <div class="caption">
-                                <h4 class="pull-right">84.99€</h4>
-                                <h4><a href="#">Produto 4</a>
+                                <h4 class="pull-right">40€</h4>
+                                <h4><a href="#">Nokia Lumia 520</a>
                                 </h4>
-                                <p>Descrição</p>
+                                <p>Nokia Lumia 520 em bom estado e com pouco uso. Cor preta.</p>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
-                            <img src="http://placehold.it/320x150" alt="">
+                            <img src="Fotos/impressora1.PNG" alt="">
                             <div class="caption">
-                                <h4 class="pull-right">94.99€</h4>
-                                <h4><a href="#">Produto 5</a>
+                                <h4 class="pull-right">25€</h4>
+                                <h4><a href="#">Impressora HP</a>
                                 </h4>
-                                <p>Descrição</p>
+                                <p>Impressora/Scanner e Fax HP em bom estado, funcional e com algum uso</p>
+                            </div>
+                        </div>
+                    </div>
+
+                     <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="Fotos/teclado1.PNG" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">30€</h4>
+                                <h4><a href="#">Teclado PT Apple</a>
+                                </h4>
+                                <p>Teclado Apple em Português em bom estado.<a target="_blank" href="http://www.bootsnipp.com"></a>.</p>
                             </div>
                         </div>
                     </div>
@@ -105,35 +117,4 @@
 
     <br />
    
-
-    <div class="row">
-        <div class="col-md-6">
-            <h2>Getting started</h2>
-            <p>
-                ASP.NET Web Forms lets you build dynamic websites using a familiar drag-and-drop, event-driven model.
-            A design surface and hundreds of controls and components let you rapidly build sophisticated, powerful UI-driven sites with data access.
-            </p>
-            <p>
-                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301948">Ver isto</a>
-            </p>
-        </div>
-        <div class="col-md-6">
-            <h2>Get more libraries</h2>
-            <p>
-                NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.
-            </p>
-            <p>
-                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301949">Learn more &raquo;</a>
-            </p>
-        </div>
-        <div class="col-md-6">
-            <h2>Web Hosting</h2>
-            <p>
-                You can easily find a web hosting company that offers the right mix of features and price for your applications.
-            </p>
-            <p>
-                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301950">Learn more &raquo;</a>
-            </p>
-        </div>
-    </div>
 </asp:Content>

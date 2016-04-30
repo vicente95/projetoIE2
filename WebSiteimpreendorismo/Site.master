@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Pagina inicial da loja - NOME DA EMPRESA</title>
+    <title>Pagina inicial da loja - CustoTec</title>
 
     <link type="text/css" rel="stylesheet" href="Content/ParaFormularios.css"/>
 
@@ -62,7 +62,7 @@
                     <span class="icon-bar"></span>
                 </button>
               
-                          <a class="navbar-brand">NOME DA EMPRESA</a>
+                          <a class="navbar-brand">CUSTOTEC</a>
                    
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -220,7 +220,7 @@
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; Nome da empresa 2016</p>
+                    <p>Copyright &copy; CustoTec 2016</p>
                 </div>
             </div>
         </footer>
