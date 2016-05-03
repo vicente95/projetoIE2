@@ -129,7 +129,7 @@
                             <Items>
                                 <asp:MenuItem Text="✆ Telemoveis" Value="1">
                                     <asp:MenuItem Text="Acessorios" Value="2">
-                                        <asp:MenuItem Text="Capas" Value="4"></asp:MenuItem>
+                                        <asp:MenuItem Text="Capas" Value="4" NavigateUrl="Paginas Capas/capas.aspx"></asp:MenuItem>
                                         <asp:MenuItem Text="Cabos" Value="5"></asp:MenuItem>
                                     </asp:MenuItem>
                                     <asp:MenuItem Text="Aparelhos" Value="3"></asp:MenuItem>

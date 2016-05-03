@@ -40,7 +40,7 @@
 
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
-                            <img src="Fotos/iphone4f2.PNG" alt="">
+                            <img src="Fotos/capa1.PNG" alt="">
                             <div class="caption">
                                 <h4 class="pull-right">15€</h4>
                                 <h4><a href="#">Capa Apple iPhone</a></h4>
@@ -97,6 +97,7 @@
                         </div>
 
                     </div>
+        </div>
         </div>
 
 
