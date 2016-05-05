@@ -7,12 +7,24 @@ using System.Web.UI.WebControls;
 using WingtipToys.Models;
 using System.Web.ModelBinding;
 
-
-public partial class _Default : Page
+namespace WingtipToys
 {
+    public partial class Pagina_Inicial : Page
+    {
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
+        public IQueryable<Produto> GetProducts([QueryString("id")] int? categoryId)
+        {
+            var _db = new WingtipToys.Models.ContextoProduto();
+            IQueryable<Produto> query = _db.Products;
+            if (categoryId.HasValue && categoryId > 0)
+            {
+                query = query.Where(p => p.CategoryID == categoryId);
+            }
+            return query;
+        }
 
+    }
 }

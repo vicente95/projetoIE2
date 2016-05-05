@@ -4,16 +4,12 @@
      <asp:FormView ID="productDetail" runat="server" ItemType="WingtipToys.Models.Produto" SelectMethod ="GetProduct" RenderOuterTable="false">
         <ItemTemplate>
             <div>
-                <h1><%#:Item.ProductName %></h1>
+                <h3><%#:Item.ProductName %></h3>
             </div>
-            <br />
             <table>
                 <tr>
-                    <td>
-                   <img src="/Catalog/Images/<%#:Item.ImagePath %>" style="border:solid; height:300px" alt="<%#:Item.ProductName %>"/>
-                   <div class="row carousel-holder">
-
-                    <div class="col-md-12">
+                    <td>&nbsp;
+                       <div class="row carousel-holder">
                         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                             <ol class="carousel-indicators">
                                 <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
@@ -22,13 +18,13 @@
                             </ol>
                             <div class="carousel-inner">
                                 <div class="item active">
-                                    <img class="slide-image"  src="Fotos/iphone4f2.PNG" alt="">
+                                    <img class="slide-image"  src="Fotos/<%#:Item.ImagePath %>"  alt="" style="border:solid; border-color:gray; height:400px; width:650px">
                                 </div>
                                 <div class="item">
-                                    <img class="slide-image" src="Fotos/ratoApple2.PNG" alt="">
+                                    <img class="slide-image" src="Fotos/<%#:Item.ImagePath2 %>"  alt="" style="border:solid; border-color:gray; height:400px; width:650px">
                                 </div>
                                 <div class="item">
-                                    <img class="slide-image" src="Fotos/nokia1.PNG" alt="">
+                                    <img class="slide-image" src="Fotos/<%#:Item.ImagePath3 %>"  alt="" style="border:solid; border-color:gray; height:400px; width:650px">
                                 </div>
                             </div>
                             <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
@@ -38,18 +34,11 @@
                                 <span class="glyphicon glyphicon-chevron-right"></span>
                             </a>
                         </div>
-                    </div>
-
-                </div>
-                    </td>
-                    <td>&nbsp;</td>  
-                    <td style="vertical-align: top; text-align:left;">
-                        <b>Descrição:</b><br /><%#:Item.Description %>
-                        <br />
-                        <span><b>Preço:</b>&nbsp;<%#: String.Format("{0:c}", Item.UnitPrice) %></span>
-                        <br />
-                        <span><b>Numero do produto:</b>&nbsp;<%#:Item.ProductID %></span>
-                        <br />
+                      </div>
+                      <br />
+                        <b>Descrição:</b><br /><%#:Item.Description %><br /><span><b>Preço:</b>&nbsp;<%#: String.Format("{0:c}", Item.UnitPrice) %></span><br /><span><b>Numero do produto:</b>&nbsp;<%#:Item.ProductID %></span><br /><br /></td>
+                    <td style=" text-align:left">
+                        
                     </td>
                 </tr>
             </table>

@@ -127,12 +127,12 @@
                               <DynamicMenuStyle BackColor="#B5C7DE" />
                               <DynamicSelectedStyle BackColor="#507CD1" />
                             <Items>
-                                <asp:MenuItem Text="✆ Telemoveis" Value="1">
-                                    <asp:MenuItem Text="Acessorios" Value="2">
-                                        <asp:MenuItem Text="Capas" Value="4"></asp:MenuItem>
-                                        <asp:MenuItem Text="Cabos" Value="5"></asp:MenuItem>
+                                <asp:MenuItem Text="✆ Telemoveis" Value="1" Selectable="False">
+                                    <asp:MenuItem Text="Acessorios" Value="2" Selectable="False">
+                                        <asp:MenuItem Text="Capas" Value="4" NavigateUrl="Pagina_Inicial.aspx?id=1"></asp:MenuItem>
+                                        <asp:MenuItem Text="Cabos" Value="5" NavigateUrl="Pagina_Inicial.aspx?id=2"></asp:MenuItem>
                                     </asp:MenuItem>
-                                    <asp:MenuItem Text="Aparelhos" Value="3"></asp:MenuItem>
+                                    <asp:MenuItem Text="Aparelhos" Value="3" NavigateUrl="Pagina_Inicial.aspx?id=3"></asp:MenuItem>
                                 </asp:MenuItem>
                             </Items>
                               <StaticHoverStyle BackColor="#284E98" ForeColor="White" />
@@ -146,9 +146,9 @@
                               <DynamicMenuStyle BackColor="#B5C7DE" />
                               <DynamicSelectedStyle BackColor="#507CD1" />
                             <Items>
-                                <asp:MenuItem Text="⎙ Computadores" Value="1">
-                                        <asp:MenuItem Text="Portateis" Value="2"></asp:MenuItem>
-                                        <asp:MenuItem Text="Desktops" Value="3"></asp:MenuItem>
+                                <asp:MenuItem Text="⎙ Computadores" Value="1" Selectable="False">
+                                        <asp:MenuItem Text="Portateis" Value="2" NavigateUrl="Pagina_Inicial.aspx?id=4"></asp:MenuItem>
+                                        <asp:MenuItem Text="Desktops" Value="3" NavigateUrl="Pagina_Inicial.aspx?id=5"></asp:MenuItem>
                                 </asp:MenuItem>
                             </Items>
                               <StaticHoverStyle BackColor="#284E98" ForeColor="White" />
@@ -162,9 +162,9 @@
                               <DynamicMenuStyle BackColor="#B5C7DE" />
                               <DynamicSelectedStyle BackColor="#507CD1" />
                             <Items>
-                                <asp:MenuItem Text="⌨ Perifericos" Value="1">
-                                        <asp:MenuItem Text="Comandos" Value="2"></asp:MenuItem>
-                                        <asp:MenuItem Text="Outros" Value="3"></asp:MenuItem>
+                                <asp:MenuItem Text="⌨ Perifericos" Value="1" Selectable="False">
+                                        <asp:MenuItem Text="Comandos" Value="2" NavigateUrl="Pagina_Inicial.aspx?id=6"></asp:MenuItem>
+                                        <asp:MenuItem Text="Outros" Value="3" NavigateUrl="Pagina_Inicial.aspx?id=7"></asp:MenuItem>
                                 </asp:MenuItem>
                             </Items>
                               <StaticHoverStyle BackColor="#284E98" ForeColor="White" />
@@ -178,9 +178,9 @@
                               <DynamicMenuStyle BackColor="#B5C7DE" />
                               <DynamicSelectedStyle BackColor="#507CD1" />
                             <Items>
-                                <asp:MenuItem Text="⑀ Cablagem" Value="1">
-                                     <asp:MenuItem Text="Audio/Video" Value="2"></asp:MenuItem>
-                                      <asp:MenuItem Text="Outros" Value="3"></asp:MenuItem>
+                                <asp:MenuItem Text="⑀ Cablagem" Value="1" Selectable="False">
+                                     <asp:MenuItem Text="Audio/Video" Value="2" NavigateUrl="Pagina_Inicial.aspx?id=8"></asp:MenuItem>
+                                      <asp:MenuItem Text="Outros" Value="3" NavigateUrl="Pagina_Inicial.aspx?id=9"></asp:MenuItem>
                                 </asp:MenuItem>
                             </Items>
                               <StaticHoverStyle BackColor="#284E98" ForeColor="White" />

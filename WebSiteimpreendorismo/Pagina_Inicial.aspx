@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Pagina inicial" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="Pagina_Inicial.aspx.cs" Inherits="_Default" %>
+﻿<%@ Page Title="Pagina inicial" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="Pagina_Inicial.aspx.cs" Inherits="WingtipToys.Pagina_Inicial" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <h2>Destaques</h2>
@@ -16,13 +16,13 @@
                             </ol>
                             <div class="carousel-inner">
                                 <div class="item active">
-                                    <img class="slide-image"  src="Fotos/iphone4f2.PNG" alt="">
+                                    <img class="slide-image"  src="Fotos/iphone4f2.PNG" alt="" style=" height:420px">
                                 </div>
                                 <div class="item">
-                                    <img class="slide-image" src="Fotos/ratoApple2.PNG" alt="">
+                                    <img class="slide-image" src="Fotos/ratoApple2.PNG" alt="" style=" height:420px">
                                 </div>
                                 <div class="item">
-                                    <img class="slide-image" src="Fotos/nokia1.PNG" alt="">
+                                    <img class="slide-image" src="Fotos/nokia1.PNG" alt="" style=" height:420px">
                                 </div>
                             </div>
                             <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
@@ -36,83 +36,71 @@
 
                 </div>
 
-                <div class="row">
-
-                    <div class="col-sm-4 col-lg-4 col-md-4">
-                        <div class="thumbnail">
-                            <img src="Fotos/iphone4f2.PNG" alt="">
-                            <div class="caption">
-                                <h4 class="pull-right">120€</h4>
-                                <h4><a href="#">Iphone 4S</a>
-                                </h4>
-                                <p>Iphone 4s com bom estado e pouco uso. Capacidade de 16GB.<a target="_blank" href="http://www.bootsnipp.com"></a>.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-4 col-lg-4 col-md-4">
-                        <div class="thumbnail">
-                            <img src="Fotos/ratoApple2.PNG" alt="">
-                            <div class="caption">
-                                <h4 class="pull-right">40€</h4>
-                                <h4><a href="#">Magic Mouse Apple</a>
-                                </h4>
-                                <p>Rato Apple com pouco uso e em bom estado.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-4 col-lg-4 col-md-4">
-                        <div class="thumbnail">
-                            <img src="Fotos/disco1.PNG" alt="">
-                            <div class="caption">
-                                <h4 class="pull-right">40€</h4>
-                                <h4><a href="#">Disco Rígido WD 3.5</a>
-                                </h4>
-                                <p>Disco para PC fixo (3.5) com capacidade de 1TB</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-4 col-lg-4 col-md-4">
-                        <div class="thumbnail">
-                            <img src="Fotos/nokia1.PNG" alt="">
-                            <div class="caption">
-                                <h4 class="pull-right">40€</h4>
-                                <h4><a href="#">Nokia Lumia 520</a>
-                                </h4>
-                                <p>Nokia Lumia 520 em bom estado e com pouco uso. Cor preta.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-4 col-lg-4 col-md-4">
-                        <div class="thumbnail">
-                            <img src="Fotos/impressora1.PNG" alt="">
-                            <div class="caption">
-                                <h4 class="pull-right">25€</h4>
-                                <h4><a href="#">Impressora HP</a>
-                                </h4>
-                                <p>Impressora/Scanner e Fax HP em bom estado, funcional e com algum uso</p>
-                            </div>
-                        </div>
-                    </div>
-
-                     <div class="col-sm-4 col-lg-4 col-md-4">
-                        <div class="thumbnail">
-                            <img src="Fotos/teclado1.PNG" alt="">
-                            <div class="caption">
-                                <h4 class="pull-right">30€</h4>
-                                <h4><a href="#">Teclado PT Apple</a>
-                                </h4>
-                                <p>Teclado Apple em Português em bom estado.<a target="_blank" href="http://www.bootsnipp.com"></a>.</p>
-                            </div>
-                        </div>
-                    </div>
-
+            <asp:ListView ID="ListaProdutos" runat="server" 
+                DataKeyNames="ProductID" GroupItemCount="4"
+                ItemType="WingtipToys.Models.Produto" SelectMethod="GetProducts">
+                <EmptyDataTemplate>
+                    <table >
+                        <tr>
+                            <td>Ainda não existem produtos nesta categoria. <a class="btn btn-default" href="/Pagina_Inicial.aspx">« Voltar</a></td>
+                        </tr>
+                    </table>
+                </EmptyDataTemplate>
+                <EmptyItemTemplate>
+                    <td/>
+                </EmptyItemTemplate>
+                <GroupTemplate>
+                    <tr id="itemPlaceholderContainer" runat="server">
+                        <td id="itemPlaceholder" runat="server"></td>
+                    </tr>
+                </GroupTemplate>
+                <ItemTemplate>
+                    <td runat="server">
+                        <table class="col-sm-11 col-lg-11 col-md-11 thumbnail">
+                            <tr>
+                                <td>
+                                    <a href="ProdutoDescricao.aspx?productID=<%#:Item.ProductID%>">
+                                        <img src="Fotos/<%#:Item.ImagePath%>" width="100" height="75" /></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="ProdutoDescricao.aspx?productID=<%#:Item.ProductID%>">
+                                        <span class="ProductName">
+                                            <%#:Item.ProductName%>
+                                        </span>
+                                    </a>
+                                    <br />
+                                    <span>
+                                       <%#:Item.PeqDescricao%>
+                                    </span>
+                                    <br />
+                                    <span>
+                                        <b>Preço: </b><%#:String.Format("{0:c}", Item.UnitPrice)%>
+                                    </span>
+                                    <br />
+                                </td>
+                            </tr>
+                        </table>
+                        </p>
+                    </td>
+                </ItemTemplate>
+                <LayoutTemplate>
+                    <table style="width:100%;">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <table id="groupPlaceholderContainer" runat="server" style="width:100%">
+                                        <tr id="groupPlaceholder"></tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </LayoutTemplate>
+            </asp:ListView>
 
                 </div>
-        </div>
 
 
     <br />

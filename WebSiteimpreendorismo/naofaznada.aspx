@@ -22,8 +22,7 @@
         <section>
         <div>
             <hgroup>
-                <h2>Titulo
-                </h2>
+                <h2>Produtos</h2>
             </hgroup>
 
             <asp:ListView ID="ListaProdutos" runat="server" 
@@ -56,7 +55,7 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <a href="ProductDetails.aspx?productID=<%#:Item.ProductID%>">
+                                    <a href="ProdutoDescricao.aspx?productID=<%#:Item.ProductID%>">
                                         <span class="ProductName">
                                             <%#:Item.ProductName%>
                                         </span>
