@@ -127,17 +127,11 @@
                               <DynamicMenuStyle BackColor="#B5C7DE" />
                               <DynamicSelectedStyle BackColor="#507CD1" />
                             <Items>
-<<<<<<< HEAD
+
                                 <asp:MenuItem Text="✆ Telemoveis" Value="1" Selectable="False">
                                     <asp:MenuItem Text="Acessorios" Value="2" Selectable="False">
                                         <asp:MenuItem Text="Capas" Value="4" NavigateUrl="Pagina_Inicial.aspx?id=1"></asp:MenuItem>
                                         <asp:MenuItem Text="Cabos" Value="5" NavigateUrl="Pagina_Inicial.aspx?id=2"></asp:MenuItem>
-=======
-                                <asp:MenuItem Text="✆ Telemoveis" Value="1">
-                                    <asp:MenuItem Text="Acessorios" Value="2">
-                                        <asp:MenuItem Text="Capas" Value="4" NavigateUrl="Paginas Capas/capas.aspx"></asp:MenuItem>
-                                        <asp:MenuItem Text="Cabos" Value="5"></asp:MenuItem>
->>>>>>> origin/master
                                     </asp:MenuItem>
                                     <asp:MenuItem Text="Aparelhos" Value="3" NavigateUrl="Pagina_Inicial.aspx?id=3"></asp:MenuItem>
                                 </asp:MenuItem>
