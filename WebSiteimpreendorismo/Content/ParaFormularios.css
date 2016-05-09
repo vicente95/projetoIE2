@@ -55,9 +55,17 @@
 .barra{
 
     text-align: right;
-    margin-left: 445px;
+    margin-left: 2px;
     margin-right:0px;
 }
+
+.barra2{
+
+    text-align: right;
+    margin-left: 360px;
+    margin-right:0px;
+}
+
 
     ul#navmenu, ul.sub1 {
 		list-style-type: none;

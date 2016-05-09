@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using WingtipToys.Logic;
 
 public partial class SiteMaster : MasterPage
 {
@@ -72,5 +73,14 @@ public partial class SiteMaster : MasterPage
     protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)
     {
         Context.GetOwinContext().Authentication.SignOut();
+    }
+
+    protected void Page_PreRender(object sender, EventArgs e)
+    {
+        using (CarrinhodecomprasAction usersShoppingCart = new CarrinhodecomprasAction())
+        {
+            string cartStr = string.Format("Carrinho Produtos({0})", usersShoppingCart.GetCount());
+            cartCount.InnerText = cartStr;
+        }
     }
 }

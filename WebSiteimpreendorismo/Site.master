@@ -80,7 +80,10 @@
                     <li>
                         <a href="/Conta/Login.aspx">Login</a>
                     </li>
-                    <li class="barra">
+                    <li class="barra2">
+                        <a runat="server" href="~/ShoppingCart" ID="cartCount">&nbsp;</a>
+                    </li>
+                    <li class="barra text-nowrap">
                          <asp:LoginView ID="LoginView1" runat="server">
                     <AnonymousTemplate>
                           <a href="/Conta/Registo.aspx">Registar</a>
