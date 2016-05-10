@@ -31,6 +31,7 @@
                     Produto:
                     <asp:RequiredFieldValidator ID="Val_Produto" runat="server" ControlToValidate="T_Produto" Display="Dynamic" ErrorMessage="* Insira uma Morada" Text="*" ValidationGroup="Formulario" />
                     <asp:RegularExpressionValidator ID="Val_Produto2" runat="server" ControlToValidate="T_Produto" Display="Dynamic" ErrorMessage="** Insira uma Morada válido" Text="**" ValidationExpression="^([A-Za-z ÀÈÌÒÙàèìòùÁÉÍÓÚáéíóúÂÊÎÔÛâêîôûÃÕãõçÇ]{2,100}[^\s])$" ValidationGroup="Formulario"/>
+                    &nbsp;&nbsp;
                     </label>
                     <asp:TextBox ID="T_Produto" runat="server" Width="198px" />
                 </li>

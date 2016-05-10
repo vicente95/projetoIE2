@@ -1,15 +1,17 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="Carrinhoc.aspx.cs" Inherits="WingtipToys.Carrinhoc" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
-    <div id="ShoppingCartTitle" runat="server" class="ContentHead"><h1>Shopping Cart</h1></div>
+    <h2>Carrinho</h2>
+    <br />
+    <div id="ShoppingCartTitle" runat="server" class="ContentHead"><h4>Produtos:</h4></div>
     <asp:GridView ID="CartList" runat="server" AutoGenerateColumns="False" ShowFooter="True" GridLines="Vertical" CellPadding="4"
         ItemType="WingtipToys.Models.Carrinho" SelectMethod="GetShoppingCartItems" 
-        CssClass="table table-striped table-bordered" >   
+        CssClass="table table-striped table-bordered">   
         <Columns>
-        <asp:BoundField DataField="ProductID" HeaderText="ID" SortExpression="ProductID" />        
-        <asp:BoundField DataField="Product.ProductName" HeaderText="Name" />        
-        <asp:BoundField DataField="Product.UnitPrice" HeaderText="Price (each)" DataFormatString="{0:c}"/>     
-        <asp:TemplateField   HeaderText="Quantity">            
+        <asp:BoundField DataField="ProductID" HeaderText="ID" SortExpression="ProductID"><HeaderStyle CssClass="hidden"/><ItemStyle CssClass="hidden"/></asp:BoundField>
+        <asp:BoundField DataField="Produtos.ProductName" HeaderText="Nome" />        
+        <asp:BoundField DataField="Produtos.UnitPrice" HeaderText="Preço" DataFormatString="{0:c}"/>     
+        <asp:TemplateField   HeaderText="Quantidade">            
                 <ItemTemplate>
                     <asp:TextBox ID="PurchaseQuantity" Width="40" runat="server" Text="<%#: Item.Quantity %>"></asp:TextBox> 
                 </ItemTemplate>        
@@ -19,7 +21,7 @@
                     <%#: String.Format("{0:c}", ((Convert.ToDouble(Item.Quantity)) *  Convert.ToDouble(Item.Produtos.UnitPrice)))%>
                 </ItemTemplate>        
         </asp:TemplateField> 
-        <asp:TemplateField HeaderText="Remove Item">            
+        <asp:TemplateField HeaderText="Remover Produto">            
                 <ItemTemplate>
                     <asp:CheckBox id="Remove" runat="server"></asp:CheckBox>
                 </ItemTemplate>        
@@ -29,7 +31,7 @@
     <div>
         <p></p>
         <strong>
-            <asp:Label ID="LabelTotalText" runat="server" Text="Order Total: "></asp:Label>
+            <asp:Label ID="LabelTotalText" runat="server" Text="Total€: "></asp:Label>
             <asp:Label ID="lblTotal" runat="server" EnableViewState="false"></asp:Label>
         </strong> 
     </div>
@@ -37,12 +39,13 @@
     <table> 
     <tr>
       <td>
-        <asp:Button ID="UpdateBtn" runat="server" Text="Update" OnClick="UpdateBtn_Click" />
+        <asp:Button ID="UpdateBtn" runat="server" Text="Atualizar" OnClick="UpdateBtn_Click" />
       </td>
       <td>
         <!--Checkout Placeholder -->
       </td>
     </tr>
     </table>
+    <br />
 </asp:Content>
 
