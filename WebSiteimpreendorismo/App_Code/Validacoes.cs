@@ -15,13 +15,13 @@ using System.Web.UI.WebControls;
 /// </summary>
 public class Validacoes
 {
-        public static int pesquisa_contribuinte(TextBox numero)
-        {
+    public static int pesquisa_email(TextBox numero)
+    {
         //ver se uma determinada matricula já existe na base de dados
         int n = 0;
-        string constring = ConfigurationManager.ConnectionStrings["ConnectionString_usr"].ConnectionString;
+        string constring = ConfigurationManager.ConnectionStrings["WingtipToys"].ConnectionString;
         SqlConnection con = new SqlConnection(constring);
-        SqlCommand cmd = new SqlCommand("Select N_contribuinte from Utilizadores where N_contribuinte= @cont", con);
+        SqlCommand cmd = new SqlCommand("Select Email_NomeUtil from Utilizadores where Email_NomeUtil= @cont", con);
         cmd.Parameters.AddWithValue("@EmailId", numero.Text);
         con.Open();
         SqlDataReader dr = cmd.ExecuteReader();
@@ -36,5 +36,36 @@ public class Validacoes
         }
         con.Close();
         return n;
+    }
+
+    public static void Nif(object source, ServerValidateEventArgs args)
+    {
+        if (Validacoes.verifica_contribuinte(args.Value) != 0)
+            args.IsValid = false;
+        else
+            args.IsValid = true;
+    }
+
+    public static int verifica_contribuinte(String nif)
+    {
+        int n = 0;
+        string constring = ConfigurationManager.ConnectionStrings["WingtipToys"].ConnectionString;
+        SqlConnection con = new SqlConnection(constring);
+        SqlCommand cmd = new SqlCommand("Select N_contribuinte from Utilizadores where N_contribuinte= @cont", con);
+        cmd.Parameters.AddWithValue("@EmailId", nif);
+        con.Open();
+        SqlDataReader dr = cmd.ExecuteReader();
+        while (dr.Read())
+        {
+            if (dr.HasRows == true)
+            {
+                n = 1;
+                break;
+            }
+        }
+        con.Close();
+        return n;
+
+
     }
 }
