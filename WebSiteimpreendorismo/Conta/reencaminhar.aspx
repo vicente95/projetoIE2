@@ -2,10 +2,10 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
 
-
     <p>
-        Reencaminhando...&gt;&gt;&gt;&gt;&gt;&gt;</p>
+        Reencaminhando...&gt;&gt;&gt;&gt;&gt;&gt;
 
+    </p>
 
 </asp:Content>
 

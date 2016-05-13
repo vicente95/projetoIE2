@@ -3010,7 +3010,6 @@ select[multiple].input-lg {
   font-size: 14px;
   font-weight: normal;
   line-height: 1.42857143;
-  text-align: center;
   white-space: nowrap;
   vertical-align: middle;
   -ms-touch-action: manipulation;
@@ -3064,8 +3063,7 @@ fieldset[disabled] a.btn {
   color: #333;
   background-color: #fff;
   border-color: #ccc;
-    width: 231px;
-}
+    }
 .btn-default:focus,
 .btn-default.focus {
   color: #333;
@@ -3984,6 +3982,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav > li {
   position: relative;
   display: block;
+    color: #336699;
 }
 .nav > li > a {
   position: relative;

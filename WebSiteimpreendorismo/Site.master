@@ -77,19 +77,26 @@
                         <a href="/Contact.aspx">Contactos</a>
                     </li>
                     <li>
-                        <a href="/Conta/Login.aspx">Login</a>
-                    </li>
-                    <li class="barra2">
-                        <a runat="server" href="~/Carrinhoc.aspx" ID="cartCount">&nbsp;</a>
-                    </li>
-                    <li class="barra text-nowrap">
-                         <asp:LoginView ID="LoginView1" runat="server">
+                        <asp:LoginView ID="LoginView2" runat="server">
                     <AnonymousTemplate>
-                          <a href="/Conta/Registo.aspx">Registar</a>
+                          <a href="/Conta/Login.aspx">Login</a>
                     </AnonymousTemplate>
                     <LoggedInTemplate>
-                         &nbsp;Bem vindo&nbsp;
-                        <asp:LoginName ID="LoginName1" runat="server" />&nbsp<asp:LoginStatus ID="LoginStatus1" runat="server" />
+                        <a href="Conta/reencaminhar.aspx">Area privada</a>
+                    </LoggedInTemplate>
+                         </asp:LoginView>
+                    </li>
+               <li class="barra2">
+                    <a runat="server" href="~/Carrinhoc.aspx" ID="cartCount">&nbsp;</a>
+                </li>
+                    <li class="barra text-nowrap">
+                <asp:LoginView ID="LoginView1" runat="server" >
+                    <AnonymousTemplate>
+                        <a href="/Conta/Registo.aspx">Registar</a>
+                    </AnonymousTemplate>
+                    <LoggedInTemplate>
+                        <asp:Label runat="server" Text="&nbsp;Bem vindo&nbsp" ForeColor="#336699"></asp:Label>
+                        <asp:LoginName ID="LoginName1" runat="server" ForeColor="#336699" />&nbsp<asp:LoginStatus ID="LoginStatus1" runat="server" ForeColor="#336699" />
                     </LoggedInTemplate>
                 </asp:LoginView>
                         

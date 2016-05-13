@@ -22,7 +22,7 @@ public class Validacoes
         string constring = ConfigurationManager.ConnectionStrings["WingtipToys"].ConnectionString;
         SqlConnection con = new SqlConnection(constring);
         SqlCommand cmd = new SqlCommand("Select Email_NomeUtil from Utilizadores where Email_NomeUtil= @cont", con);
-        cmd.Parameters.AddWithValue("@EmailId", numero.Text);
+        cmd.Parameters.AddWithValue("@cont", numero.Text);
         con.Open();
         SqlDataReader dr = cmd.ExecuteReader();
         while (dr.Read())
@@ -52,7 +52,7 @@ public class Validacoes
         string constring = ConfigurationManager.ConnectionStrings["WingtipToys"].ConnectionString;
         SqlConnection con = new SqlConnection(constring);
         SqlCommand cmd = new SqlCommand("Select N_contribuinte from Utilizadores where N_contribuinte= @cont", con);
-        cmd.Parameters.AddWithValue("@EmailId", nif);
+        cmd.Parameters.AddWithValue("@cont", nif);
         con.Open();
         SqlDataReader dr = cmd.ExecuteReader();
         while (dr.Read())

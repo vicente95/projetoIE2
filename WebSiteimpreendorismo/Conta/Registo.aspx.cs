@@ -17,9 +17,11 @@ public partial class Account_Register : Page
     protected void Page_Load(object sender, EventArgs e)
     {
         Panel_login.Visible = false;
+        Panel1.Visible = true;
         Panel_Recupera_email.Visible = false;
         Panel_Recupera_questao.Visible = false;
         Panel_registo.Visible = true;
+        Label3.Text =  "";
 
 
         //CriarCategorias(sender, e);
@@ -45,7 +47,8 @@ public partial class Account_Register : Page
 
         if (existe ==1)
         {
-            
+            Label3.Text = "Esse email já esta registado!!!";
+
         }
         else
         {
@@ -69,6 +72,9 @@ public partial class Account_Register : Page
             //acrescentar nas roles o utilizador como utilizador normal
             string[] RegistaRol = { nomedeutilizador };
             Roles.AddUsersToRole(RegistaRol, "utilizador");
+
+            Label3.Text = "";
+            Panel1.Visible = false;
 
         }
 

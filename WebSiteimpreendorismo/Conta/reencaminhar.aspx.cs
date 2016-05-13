@@ -21,11 +21,11 @@ public partial class Conta_reencaminhar : System.Web.UI.Page
 
         if (a[0] == "utilizador")
         {
-            Response.Redirect("~/utilizadores_unitarios/inicio_unitario.aspx");
+            Response.Redirect("~/Utilizador/inicio_utilizador.aspx");
         }
         else if (a[0] == "administrador")
         {
-            Response.Redirect("~/Administrador/GerirClientes.aspx");
+            Response.Redirect("~/Administrador/inicio_administrador.aspx");
         }
     }
 }

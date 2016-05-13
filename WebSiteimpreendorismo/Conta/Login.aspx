@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Log in" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="Login.aspx.cs" Inherits="Account_Login" Async="true" %>
+﻿<%@ Page Title="Area do utilizador" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="Login.aspx.cs" Inherits="Account_Login" Async="true" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
        <h2>Area do utilizador</h2>
@@ -256,13 +256,21 @@
 
     </asp:Panel>
 
-    <asp:Panel ID="Panel_login" runat="server">
+      <asp:Panel ID="Panel_login" runat="server">
         <h4><span style="color:grey; font-weight: 700;"><em style="background-color: #E6F0F3">Esta no Login</em></span> Introduza os seus dados:</h4>
         <hr />
-
-        <asp:Login ID="Login1" runat="server" BackColor="#F7F7DE" BorderColor="#CCCC99" BorderStyle="Solid" BorderWidth="1px" Font-Names="Verdana" Font-Size="10pt" CreateUserText="Não tem conta? Crie a sua conta aqui" CreateUserUrl="~/Conta/Registo.aspx">
-            <TitleTextStyle BackColor="#6B696B" Font-Bold="True" ForeColor="#FFFFFF" />
-        </asp:Login>
+        <asp:LoginView ID="LoginView1" runat="server">
+            <AnonymousTemplate>
+                <asp:Login ID="Login1" runat="server" BackColor="#F7F7DE" BorderColor="#CCCC99" BorderStyle="Solid" BorderWidth="1px" CreateUserText="Não tem conta? Crie a sua conta aqui" CreateUserUrl="~/Conta/Registo.aspx" Font-Names="Verdana" Font-Size="10pt" DestinationPageUrl="~/Conta/reencaminhar.aspx">
+                    <TitleTextStyle BackColor="#6B696B" Font-Bold="True" ForeColor="#FFFFFF" />
+                </asp:Login>
+            </AnonymousTemplate>
+            <LoggedInTemplate>
+                Bem vindo
+                <asp:LoginName ID="LoginName2" runat="server" />
+                &nbsp;<asp:LoginStatus ID="LoginStatus2" runat="server" />
+            </LoggedInTemplate>
+        </asp:LoginView>
 
 
         <br />
