@@ -11,6 +11,7 @@ using System.Data.SqlClient;
 using System.Configuration;
 using System.Web.Configuration;
 
+
 public partial class Account_Register : Page
 {
 
@@ -53,17 +54,18 @@ public partial class Account_Register : Page
         else
         {
             //Registar utilizador na nossa tabela
-            string command2 = "INSERT INTO [Utilizadores] ([Nome], [N_contribuinte], [Telefone], [Morada], [Codigo_postal1], [Codigo_postal2], [Localidade],[Email_NomeUtil]) VALUES (@id1, @id2, @id3, @id4, @id5, @id6, @id7, @id8)";
+            string command2 = "INSERT INTO [Utilizadores] ([Nome], [N_contribuinte], [Telefone], [Morada], [Codigo_postal1], [Codigo_postal2], [Codigo_postal3], [Localidade], [Email_NomeUtil]) VALUES (@id1, @id2, @id3, @id4, @id5, @id6, @id7, @id8, @id9)";
             SqlConnection co = new SqlConnection(connectionString);
             SqlCommand cmd2 = new SqlCommand(command2, co);
-            cmd2.Parameters.AddWithValue("@id1", email.Text);
+            cmd2.Parameters.AddWithValue("@id1", nome.Text);
             cmd2.Parameters.AddWithValue("@id2", contribuinte.Text);
             cmd2.Parameters.AddWithValue("@id3", telefone.Text);
             cmd2.Parameters.AddWithValue("@id4", Morada.Text);
             cmd2.Parameters.AddWithValue("@id5", cod1.Text);
             cmd2.Parameters.AddWithValue("@id6", cod2.Text);
             cmd2.Parameters.AddWithValue("@id7", cod3.Text);
-            cmd2.Parameters.AddWithValue("@id8", nome.Text);
+            cmd2.Parameters.AddWithValue("@id8", Loca.Text);
+            cmd2.Parameters.AddWithValue("@id9", email.Text);
 
             co.Open();
             cmd2.ExecuteNonQuery();
@@ -75,6 +77,13 @@ public partial class Account_Register : Page
 
             Label3.Text = "";
             Panel1.Visible = false;
+            string userId = Membership.GetUser(nomedeutilizador).ProviderUserKey.ToString();
+
+            using (WingtipToys.Logic.CarrinhodecomprasAction usersShoppingCart = new WingtipToys.Logic.CarrinhodecomprasAction())
+                {
+                  String cartId = usersShoppingCart.GetCartId();
+                  usersShoppingCart.MigrateCart(cartId, nomedeutilizador);
+                }
 
         }
 
@@ -83,6 +92,10 @@ public partial class Account_Register : Page
 
 
     }
+
+
+
+
     protected void CustomValidator1_ServerValidate(object source, ServerValidateEventArgs args)
     {
         Validacoes.Nif(source, args);

@@ -83,4 +83,12 @@ public partial class SiteMaster : MasterPage
             cartCount.InnerText = cartStr;
         }
     }
+
+    protected void LoginStatus1_LoggedOut(object sender, EventArgs e)
+    {
+        string nomet = "";
+        WingtipToys.Logic.CarrinhodecomprasAction usersShoppingCart = new WingtipToys.Logic.CarrinhodecomprasAction();
+        String cartId = usersShoppingCart.GetCartId();
+        usersShoppingCart.ChangeCart(cartId, nomet);
+    }
 }

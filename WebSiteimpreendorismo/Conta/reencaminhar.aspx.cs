@@ -10,6 +10,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.Web.Configuration;
+using WingtipToys.Logic;
 
 public partial class Conta_reencaminhar : System.Web.UI.Page
 {
@@ -17,6 +18,10 @@ public partial class Conta_reencaminhar : System.Web.UI.Page
     {
         string nomet = HttpContext.Current.User.Identity.Name.ToString();
         string[] a = Roles.GetRolesForUser(nomet);
+
+        WingtipToys.Logic.CarrinhodecomprasAction usersShoppingCart = new WingtipToys.Logic.CarrinhodecomprasAction();
+        String cartId = usersShoppingCart.GetCartId();
+        usersShoppingCart.MigrateCart(cartId, nomet);
 
 
         if (a[0] == "utilizador")

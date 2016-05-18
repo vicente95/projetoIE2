@@ -11,7 +11,9 @@
                         <asp:RequiredFieldValidator ID="Val_Nome" runat="server" ErrorMessage="* Nome é obrigatório" ControlToValidate="T_Nome" Display="Dynamic" Text="*" ValidationGroup="Formulario"/>
                         <asp:RegularExpressionValidator ID="Val_Nome2" runat="server" ErrorMessage="** Insira um nome válido" ControlToValidate="T_Nome" Display="Dynamic" Text="**" ValidationExpression="^([a-zA-ZçÇãÃâÂÎîÊêáàÁÀÌÍìí\s]{5,100})" ValidationGroup="Formulario" />
                 
-                <asp:TextBox ID="T_Nome" runat="server" Width="479px" />
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                
+                <asp:TextBox ID="T_Nome" runat="server" Width="459px" />
             </li>
         </ul>
             <ul>
@@ -19,22 +21,22 @@
                     <asp:RequiredFieldValidator ID="Val_Tel_1" runat="server" ControlToValidate="T_Tel" Display="Dynamic" ErrorMessage="* Insira um Numero de Telefone ou Telemovel" Text="*" ValidationGroup="Formulario" />
                     <asp:RegularExpressionValidator ID="Val_Tel_2" runat="server" ControlToValidate="T_Tel" Display="Dynamic" ErrorMessage="** Insira um numero VALIDO" Text="**" ValidationExpression="^(\d{9})$" ValidationGroup="Formulario" />
                     <asp:TextBox ID="T_Tel" runat="server" Width="196px" />
-                    &nbsp;<label>E-mail:</label>
-                    <asp:RequiredFieldValidator ID="EmailRequired1" runat="server" ControlToValidate="Email" Display="Dynamic" ErrorMessage="* Email Obrigatório" Text="*" ValidationGroup="Formulario"/>
-                    <asp:RegularExpressionValidator ID="EmailRequired2" runat="server" ControlToValidate="Email" Display="Dynamic" ErrorMessage="** Insira um Email Valído" Text="**" ValidationExpression="^([a-z0-9_\.-]+\@[\da-z\.-]+\.[a-z\.]{2,6})$" ValidationGroup="Formulario"/>
+                    &nbsp;<label>E-mail: </label>
                     <asp:TextBox ID="Email" runat="server" Width="196px" />
+                    &nbsp;<asp:RequiredFieldValidator ID="EmailRequired3" runat="server" ControlToValidate="Email" Display="Dynamic" ErrorMessage="* Email Obrigatório" Text="*" ValidationGroup="Formulario" />
+                    <asp:RegularExpressionValidator ID="EmailRequired4" runat="server" ControlToValidate="Email" Display="Dynamic" ErrorMessage="** Insira um Email Valído" Text="**" ValidationExpression="^([a-z0-9_\.-]+\@[\da-z\.-]+\.[a-z\.]{2,6})$" ValidationGroup="Formulario" />
                 </li>
             </ul>
             <ul>
                 <li>
                     <label>
-                    Produto:
-                    <asp:RequiredFieldValidator ID="Val_Produto" runat="server" ControlToValidate="T_Produto" Display="Dynamic" ErrorMessage="* Insira uma Morada" Text="*" ValidationGroup="Formulario" />
-                    <asp:RegularExpressionValidator ID="Val_Produto2" runat="server" ControlToValidate="T_Produto" Display="Dynamic" ErrorMessage="** Insira uma Morada válido" Text="**" ValidationExpression="^([A-Za-z ÀÈÌÒÙàèìòùÁÉÍÓÚáéíóúÂÊÎÔÛâêîôûÃÕãõçÇ]{2,100}[^\s])$" ValidationGroup="Formulario"/>
-                    &nbsp;&nbsp;
+                    Produto:&nbsp;
                     </label>
-                    <asp:TextBox ID="T_Produto" runat="server" Width="198px" />
-                </li>
+                    <asp:TextBox ID="T_Produto" runat="server" Width="258px" />
+                    <label>
+                    <asp:RequiredFieldValidator ID="Val_Produto3" runat="server" ControlToValidate="T_Produto" Display="Dynamic" ErrorMessage="* Insira uma Morada" Text="*" ValidationGroup="Formulario" />
+                    <asp:RegularExpressionValidator ID="Val_Produto4" runat="server" ControlToValidate="T_Produto" Display="Dynamic" ErrorMessage="** Insira uma Morada válido" Text="**" ValidationExpression="^([A-Za-z ÀÈÌÒÙàèìòùÁÉÍÓÚáéíóúÂÊÎÔÛâêîôûÃÕãõçÇ]{2,100}[^\s])$" ValidationGroup="Formulario" />
+                    &nbsp;</label></li>
             </ul>
             <ul>
                 <li>
@@ -58,13 +60,13 @@
                     </label>
                 </li>
                 
-                    <asp:TextBox ID="T_descricao" runat="server" Height="85px" TextMode="MultiLine" Width="523px" />
+                    <asp:TextBox ID="T_descricao" runat="server" Height="90px" TextMode="MultiLine" Width="530px" />
                 
                     <asp:ValidationSummary ID="ValidationSummary1" runat="server" CssClass="text-danger" ValidationGroup="Formulario"/>
             </ul>
             <p>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:Button ID="B_submeter_produto" runat="server" OnClick="B_Create_User_Click" Text="Enviar formulario" ValidateRequestMode="Enabled" ValidationGroup="Formulario" />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Button ID="B_submeter_produto" runat="server" OnClick="B_Create_User_Click" Text="Enviar formulario" CssClass="btn btn-default" ValidateRequestMode="Enabled" ValidationGroup="Formulario" />
             </p>
         </div>
     </asp:Panel>

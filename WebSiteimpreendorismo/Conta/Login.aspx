@@ -41,7 +41,7 @@
             <asp:RequiredFieldValidator ID="Codigopostal2" runat="server" ControlToValidate="cod2" ErrorMessage="O segundo campo do codigo postal é necessario" ToolTip="O segundo campo do codigo postal é necessario" ValidationGroup="CreateUserWizard1" CssClass="text-danger">*</asp:RequiredFieldValidator>
             <asp:RequiredFieldValidator ID="Codigopostal3" runat="server" ControlToValidate="cod3" ErrorMessage="O terceiro campo do codigo postal é necessario" ToolTip="O terceiro campo do codigo postal é necessario" ValidationGroup="CreateUserWizard1" CssClass="text-danger">*</asp:RequiredFieldValidator>
             <asp:RegularExpressionValidator ID="Val_Cod_Post" runat="server" ErrorMessage="** Insira 4 digitos no primeiro campo do codigo postal" ControlToValidate="cod1" Display="Dynamic" Text="**" ValidationExpression="\d{4}" ValidationGroup="CreateUserWizard1" />
-            <asp:RegularExpressionValidator ID="Val_Cod_Post_2" runat="server" ErrorMessage="** Insira 3 digitos no segundo campo do codigo postal" ControlToValidate="cod2" Display="Dynamic" Text="**" ValidationExpression="\d{4}" ValidationGroup="CreateUserWizard1" />
+            <asp:RegularExpressionValidator ID="Val_Cod_Post_2" runat="server" ErrorMessage="** Insira 3 digitos no segundo campo do codigo postal" ControlToValidate="cod2" Display="Dynamic" Text="**" ValidationExpression="\d{3}" ValidationGroup="CreateUserWizard1" />
             <asp:RegularExpressionValidator ID="Val_Cod_Post_3" runat="server" ControlToValidate="cod3" Display="Dynamic" ErrorMessage="** Insira o 3 campo do codigo postal, local a que diz respeito" Text="**" ValidationExpression="^([A-Za-z0-9 ÀÈÌÒÙàèìòùÁÉÍÓÚáéíóúÂÊÎÔÛâêîôûÃÕãõçÇ ]{2,100}[^\s])$" ValidationGroup="CreateUserWizard1" />
         </div>
         <div class="form-inline">
@@ -55,7 +55,7 @@
 </div>
     </div> <br />   
     <h5> <strong>Dados relativos a conta:</strong></h5>
-        <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" OnCreatedUser="CreateUserWizard1_CreatedUser">
+        <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" OnCreatedUser="CreateUserWizard1_CreatedUser" ContinueDestinationPageUrl="~/Conta/reencaminhar.aspx">
         <WizardSteps>
             <asp:CreateUserWizardStep ID="CreateUserWizardStep1" runat="server">
                 <ContentTemplate>
