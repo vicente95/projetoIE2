@@ -46,7 +46,7 @@
     </asp:GridView>
 
      <br />
-            <asp:Label ID="Label2" runat="server" Text="" style="font-weight: 700"></asp:Label>
+            <asp:Label ID="Label2" runat="server" Text="" style="font-weight: 700; font-size: large;"></asp:Label>
 
      <asp:Panel ID="Panel1" runat="server">
             <hr />

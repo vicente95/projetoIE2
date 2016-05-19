@@ -68,4 +68,29 @@ public class Validacoes
 
 
     }
+
+    public static int verifica_contribuinte2(String nif)
+    {
+        int n = 0;
+        string nome = HttpContext.Current.User.Identity.Name.ToString();
+        string constring = ConfigurationManager.ConnectionStrings["WingtipToys"].ConnectionString;
+        SqlConnection con = new SqlConnection(constring);
+        SqlCommand cmd = new SqlCommand("Select N_contribuinte from Utilizadores where N_contribuinte= @cont AND Email_NomeUtil != @pro", con);
+        cmd.Parameters.AddWithValue("@cont", nif);
+        cmd.Parameters.AddWithValue("@pro", nome);
+        con.Open();
+        SqlDataReader dr = cmd.ExecuteReader();
+        while (dr.Read())
+        {
+            if (dr.HasRows == true)
+            {
+                n = 1;
+                break;
+            }
+        }
+        con.Close();
+        return n;
+
+
+    }
 }
