@@ -91,4 +91,5 @@ public partial class SiteMaster : MasterPage
         String cartId = usersShoppingCart.GetCartId();
         usersShoppingCart.ChangeCart(cartId, nomet);
     }
+
 }

@@ -116,7 +116,7 @@
             <div class="col-md-3">
                     <div class="list-group">
                       <a class="list-group-item" ><span class="auto-style2">Ordenar:</span>
-                          <asp:DropDownList ID="DropDownList1" runat="server" Height="24px" Width="180px">
+                          <asp:DropDownList ID="DropDownList1" runat="server" Height="24px" Width="180px" AutoPostBack="True">
                               <asp:ListItem Value="1">Aleatoriamente</asp:ListItem>
                               <asp:ListItem Value="2">A...Z</asp:ListItem>
                               <asp:ListItem Value="3">Mais barato</asp:ListItem>

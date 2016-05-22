@@ -42,7 +42,8 @@
                 <EmptyDataTemplate>
                     <table >
                         <tr>
-                            <td>Ainda não existem produtos nesta categoria. <a class="btn btn-default" href="/Pagina_Inicial.aspx">« Voltar</a></td>
+                            <br /><br />
+                            <td>Ainda não existem produtos nesta categoria.<br /> <a class="btn btn-default" href="/Pagina_Inicial.aspx">« Voltar</a></td>
                         </tr>
                     </table>
                 </EmptyDataTemplate>
@@ -104,8 +105,26 @@
                     </table>
                 </LayoutTemplate>
             </asp:ListView>
-
-                </div>
+           
+            <asp:Panel ID="Panel1" runat="server">
+                    &nbsp;<asp:DataPager ID="lvDataPager1" runat="server" OnLoad="lvDataPager1_Load" PagedControlID="ListaProdutos" OnUnload="lvDataPager1_Load" >
+                        <Fields>
+                            <asp:NextPreviousPagerField RenderDisabledButtonsAsLabels="true" ButtonCssClass="btn-default" ButtonType="Link" PreviousPageText="&lt;&lt; Pág. anterior" ShowFirstPageButton="false" ShowNextPageButton="false" ShowPreviousPageButton="true" />
+                            <asp:NumericPagerField ButtonType="Button" CurrentPageLabelCssClass="btn-default" />
+                            <asp:NextPreviousPagerField RenderDisabledButtonsAsLabels="true" ButtonCssClass="btn-default" ButtonType="Link" NextPageText="Pág. seguinte &gt;&gt;" ShowLastPageButton="false" ShowNextPageButton="true" ShowPreviousPageButton="false" />
+                        </Fields>
+                    </asp:DataPager>
+                    <span class="barra3"> Itens por pagina:
+            <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True">
+                <asp:ListItem>12</asp:ListItem>
+                <asp:ListItem Selected="True">19</asp:ListItem>
+                <asp:ListItem>24</asp:ListItem>
+                <asp:ListItem>32</asp:ListItem>
+                <asp:ListItem>40</asp:ListItem>
+                </asp:DropDownList>
+                        </span>
+                </asp:Panel>
+          </div>
 
 
     <br />
