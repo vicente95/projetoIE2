@@ -9,7 +9,7 @@ using System.Web.ModelBinding;
 
 namespace WingtipToys
 {
-    public partial class Pagina_Inicial : Page
+    public partial class Pagina_inicial_pesquiza : System.Web.UI.Page
     {
         int tem_items;
 
@@ -18,11 +18,11 @@ namespace WingtipToys
 
             DropDownList teste = (DropDownList)Master.FindControl("DropDownList1");
 
-            if(teste.SelectedValue == "2")
+            if (teste.SelectedValue == "2")
             {
                 String expression = "ProductName";
                 SortDirection direction2 = SortDirection.Ascending;
-               ListaProdutos.Sort(expression, direction2);
+                ListaProdutos.Sort(expression, direction2);
 
             }
             else if (teste.SelectedValue == "3")
@@ -48,20 +48,16 @@ namespace WingtipToys
 
         }
 
-        public IQueryable<Produto> GetProducts([QueryString("id")] int? categoryId)
+        public IQueryable<Produto> GetProducts2([QueryString("pesq")] string Nomeproduto)
         {
             var _db = new WingtipToys.Models.ContextoProduto();
             IQueryable<Produto> query = _db.Products;
-            if (categoryId.HasValue && categoryId > 0)
-            {
-                query = query.Where(p => p.CategoryID == categoryId);
-            }
+            query = query.Where(p => p.ProductName.ToLower().Contains(Nomeproduto.ToLower()));
             tem_items = query.Count();
             lvDataPager1_Load(null, null);
             return query;
-            
-        }
 
+        }
 
         protected void lvDataPager1_Load(object sender, EventArgs e)
         {
@@ -78,6 +74,5 @@ namespace WingtipToys
                 Panel1.Visible = false;
             }
         }
-
     }
 }

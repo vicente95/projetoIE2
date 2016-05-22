@@ -92,4 +92,17 @@ public partial class SiteMaster : MasterPage
         usersShoppingCart.ChangeCart(cartId, nomet);
     }
 
+
+    protected void Buttonir_Click(object sender, EventArgs e)
+    {
+        string urlpesquisa = "Pagina_inicial_pesquiza.aspx?pesq=" + TextBoxpesquiza.Text;
+
+        Response.Redirect(urlpesquisa);
+    }
+
+
+    protected void Buttonapagar_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("/Pagina_Inicial.aspx");
+    }
 }

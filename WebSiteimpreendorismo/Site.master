@@ -126,8 +126,8 @@
                         <a class="list-group-item" ><span class="auto-style2">Pesquisa:</span><br />
 
                         <asp:TextBox ID="TextBoxpesquiza" runat="server" TextMode="SingleLine" Width="160px" Height="30px" ></asp:TextBox>
-                        <asp:Button ID="Buttonapagar" runat="server" text="⌫" ForeColor="#999999" BackColor="Black" Font-Bold="true" Height="30px" Width="30px" />
-                        <asp:Button ID="Buttonir" runat="server" text="⌕" ForeColor="#999999" Font-Bold="true" BackColor="Black" Width="30px" Height="30px"/>
+                        <asp:Button ID="Buttonapagar" runat="server" text="⌫" ForeColor="#999999" BackColor="Black" Font-Bold="true" Height="30px" Width="30px" OnClick="Buttonapagar_Click" />
+                        <asp:Button ID="Buttonir" runat="server" text="⌕" ForeColor="#999999" Font-Bold="true" BackColor="Black" Width="30px" Height="30px" OnClick="Buttonir_Click"/>
                       </a>
          
                           <asp:Menu ID="Menu2" runat="server" CssClass="list-group-item" BackColor="White" DynamicHorizontalOffset="2" Font-Names="Segoe UI Emoji" Font-Size="Small" ForeColor="Black" StaticSubMenuIndent="10px" Width="262px" Height="65px">
