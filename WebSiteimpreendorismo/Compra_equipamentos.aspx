@@ -3,7 +3,7 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <h2>Compra de equipamentos</h2>
     Preencha este formulario para que possmos conhecer o produto que pretende vender.<br /><br />
-    <asp:Panel ID="InsertDados" runat="server">
+    <asp:Panel ID="Panel1" runat="server">
         <div class="Form">
         <ul>
             <li style="width: 552px">
@@ -65,9 +65,61 @@
                     <asp:ValidationSummary ID="ValidationSummary1" runat="server" CssClass="text-danger" ValidationGroup="Formulario"/>
             </ul>
             <p>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:Button ID="B_submeter_produto" runat="server" OnClick="B_Create_User_Click" Text="Enviar formulario" CssClass="btn btn-default" ValidateRequestMode="Enabled" ValidationGroup="Formulario" />
+                &nbsp;&nbsp;<asp:Label ID="L_basededados" runat="server" class="Resultado" Text="" />
+&nbsp;<asp:Button ID="B_submeter_produto" runat="server" OnClick="Enviar_formulario" Text="Enviar formulario" CssClass="btn btn-default" ValidateRequestMode="Enabled" ValidationGroup="Formulario" />
             </p>
         </div>
+    </asp:Panel>
+    <asp:Panel ID="Panel2" runat="server">
+        <div class="Form" runat="server">
+        <ul>
+            <li class="DoisCampos_campoGrandeEsquerda">
+                <label>
+                    Nome
+                </label>
+                <asp:Label class="Resultado" ID="L_Nome" runat="server" Text="" />
+            </li>
+            <li class="DoisCampos_campoPequenoDireita">
+                <label>
+                    Telefone
+                </label>
+                <asp:Label class="Resultado" ID="L_Tele" runat="server" Text="" />
+            </li>
+            <li class="TresCampos_campoUm">
+                <label>Email</label>
+                <asp:Label class="Resultado" ID="L_Email" runat="server" Text="" />
+            </li>
+        </ul>
+            <p>
+                &nbsp;</p>
+            <ul>
+                <li class="TresCampos_campoDois">
+                    <label>
+                    Produto</label>
+                    <asp:Label ID="L_produto" runat="server" class="Resultado" Text="" />
+                </li>
+                <li class="TresCampos_campoTres">
+                    <label>
+                    Tipo de produto</label>
+                    <asp:Label ID="L_tipoProd" runat="server" class="Resultado" Text="" />
+                </li>
+            </ul>
+            <p>
+                &nbsp;</p>
+            <ul>
+                <li class="TresCampos_campoDois">
+                    <label>
+                    Descrição</label>
+                    <asp:Label ID="L_des" runat="server" class="Resultado" Text="" />
+                </li>
+            </ul>
+            <p>
+                <br />
+                <asp:Label ID="L_acao" runat="server" class="Resultado" Text="" />
+                <asp:Button ID="B_Editar" runat="server" OnClick="B_Editar_Click" Text="Voltar para o inicio" Visible="true" Width="150px" />
+            </p>
+    </div>
+
+
     </asp:Panel>
 </asp:Content>

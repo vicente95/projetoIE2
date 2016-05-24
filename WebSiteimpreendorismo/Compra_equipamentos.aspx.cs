@@ -1,9 +1,15 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.Security;
+using System.Data;
+using System.Data.SqlClient;
+using System.Configuration;
+using System.Web.Configuration;
 
 public partial class About : Page
 {
@@ -11,52 +17,29 @@ public partial class About : Page
     {
 
     }
-    protected void Send_Click1(object sender, EventArgs e)
+    protected void Enviar_formulario(object sender, EventArgs e)
     {
-    }
-    protected void B_Create_User_Click(object sender, EventArgs e)
-    {
-        /*
-        Page.Validate();
-        if (!Page.IsValid) Panel1.Visible = true;
+        //Registar o produto que pretende ser vendido
+        int flag;
+
+        flag = Escrever_para_base_dados.Registar_produto_comprar(T_Nome, T_Tel, Email, T_Produto, Lista_Tipo_de_produtos, T_descricao);
+
+        if (flag == 1) { 
+            L_basededados.ForeColor = System.Drawing.Color.Red;
+            L_basededados.Text= "Erro ao enviar formulario! Por favor preencha novamente";
+        }
         else
         {
-
+            L_basededados.Text = "";
             L_Nome.Text = T_Nome.Text;
-            L_Nif.Text = T_Nif.Text;
-            L_Tel.Text = T_Tel.Text;
+            L_Tele.Text = T_Tel.Text;
             L_Email.Text = Email.Text;
-            L_Loc.Text = Lista_Freguesias.SelectedValue;
-            L_Morada.Text = T_Morada.Text;
-            L_Cod_Post.Text = T_Cod_Post.Text;
-            L_Username.Text = UserName.Text;
+            L_produto.Text = T_Produto.Text;
+            L_tipoProd.Text = Lista_Tipo_de_produtos.SelectedItem.Text;
+            L_des.Text = T_descricao.Text;
 
-            String Result = BaseDeDados.Add.Utilizador.Novo_Utilizador(T_Nome.Text, T_Nif.Text, T_Morada.Text, Lista_Freguesias.SelectedValue, L_Cod_Post.Text, Email.Text, T_Tel.Text, UserName.Text, Password.Text, "User");
-            if (Result == "0")
-            {
-                Dados_User.Visible = true;
-                InsertDados.Visible = false;
-            }
-            else
-            {
-                Panel1.Visible = true;
-                L_Erro.Text = Result;
-            }
-        }*/
+            L_acao.ForeColor = System.Drawing.Color.Green;
+            L_acao.Text = "Feito com sucesso!";
 
+        }
     }
-    protected void B_Close_Error_Click(object sender, EventArgs e)
-    {
-       // Panel1.Visible = false;
-        //L_Erro.Text = "";
-    }
-
-    protected void CustomValidator1_ServerValidate(object source, ServerValidateEventArgs args)
-    {
-        //Validacao.Nif(source, args);
-    }
-    protected void ValUser_ServerValidate(object source, ServerValidateEventArgs args)
-    {
-        //Validacao.Username(source, args);
-    }
-}
