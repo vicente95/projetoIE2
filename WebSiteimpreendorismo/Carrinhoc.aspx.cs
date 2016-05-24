@@ -24,6 +24,8 @@ namespace WingtipToys
                 {
                     // Display Total.
                     lblTotal.Text = String.Format("{0:c}", cartTotal);
+                    UpdateBtn.Visible = true;
+                    Btncontinuar.Visible = true;
                 }
                 else
                 {
@@ -31,6 +33,7 @@ namespace WingtipToys
                     lblTotal.Text = "";
                     ShoppingCartTitle.InnerText = "O carrinho de compras esta vazio";
                     UpdateBtn.Visible = false;
+                    Btncontinuar.Visible = false;
                 }
             }
 

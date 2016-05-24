@@ -26,10 +26,10 @@ namespace WingtipToys
             }
             else
             {
-                Debug.Fail("ERROR : We should never get to AddToCart.aspx without a ProductId.");
-                throw new Exception("ERROR : It is illegal to load AddToCart.aspx without setting a ProductId.");
+                Debug.Fail("ERRO : O id do produto é nulo.");
+                throw new Exception("ERRO: Recarregar o produto sem id");
             }
-            Response.Redirect("Carrinhoc.aspx");
+            Response.Redirect("/Carrinhoc.aspx");
         }
     }
 }

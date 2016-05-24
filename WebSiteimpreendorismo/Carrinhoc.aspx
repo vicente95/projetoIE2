@@ -39,10 +39,16 @@
     <table> 
     <tr>
       <td>
-        <asp:Button ID="UpdateBtn" runat="server" Text="Atualizar" OnClick="UpdateBtn_Click" />
+          <!--voltar para a pagina dos produtos -->
+          <asp:Button ID="Btnvoltar" runat="server" Text="Continuar a comprar «" CssClass="btn btn-default" />
       </td>
       <td>
-        <!--Checkout Placeholder -->
+          <!--Atualizar quantidade de produtos ou remover -->
+          <asp:Button ID="UpdateBtn" runat="server" Text="Atualizar Compras" CssClass="btn btn-default" OnClick="UpdateBtn_Click" />
+      </td>
+      <td>
+          <!--Seguir em frente, comprar -->
+          <asp:Button ID="Btncontinuar" runat="server" Text="Finalizar compra »" CssClass="btn btn-default" />
       </td>
     </tr>
     </table>
