@@ -4,13 +4,6 @@
  * Licensed under the MIT license
  */
 
-$(function () {
-    $('.required-icon').tooltip({
-        placement: 'left',
-        title: 'Required field'
-    });
-});
-
 if (typeof jQuery === 'undefined') {
   throw new Error('Bootstrap\'s JavaScript requires jQuery')
 }

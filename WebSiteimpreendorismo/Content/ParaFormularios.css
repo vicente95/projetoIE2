@@ -67,7 +67,7 @@
 .barra2{
 
     text-align: right;
-    margin-left: 272px;
+    margin-left: 140px;
     margin-right:0px;
 }
 
@@ -75,6 +75,13 @@
 
     text-align: right;
     margin-left: 352px;
+    margin-right:0px;
+}
+
+.barra4{
+
+    text-align: right;
+    margin-left: 682px;
     margin-right:0px;
 }
 

@@ -16,9 +16,9 @@ public partial class Administrador_inicio_utilizador : System.Web.UI.Page
         Mostrar.BindGrid(GridView1);
         Mostrar.BindGrid2(GridView2);
         Panel1.Visible = false;
-        string str = "This is a test";
-        str = str.Replace(" ", String.Empty);
-        Label2.Text=str;
+        //string str = "This is a test";
+        //str = str.Replace(" ", String.Empty);
+       // Label2.Text=str;
 
 
     }

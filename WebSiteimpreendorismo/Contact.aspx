@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="Contact" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="Contact.aspx.cs" Inherits="Contact" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <h2>Contactos</h2>
+    <h2><span class="glyphicon glyphicon-blackboard"></span>&nbsp;Contactos</h2>
     <h3>Todos os contactos para facilitar</h3>
     <address>
         Para nos encontrar para negócio, temos dois sitios de preferência, em baixo temos as nossas áreas de preferência:<br />

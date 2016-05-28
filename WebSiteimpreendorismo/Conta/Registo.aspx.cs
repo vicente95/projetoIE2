@@ -18,7 +18,7 @@ public partial class Account_Register : Page
     protected void Page_Load(object sender, EventArgs e)
     {
         Panel_login.Visible = false;
-        Panel1.Visible = true;
+        panel1.Visible = true;
         Panel_Recupera_email.Visible = false;
         Panel_Recupera_questao.Visible = false;
         Panel_registo.Visible = true;
@@ -76,7 +76,7 @@ public partial class Account_Register : Page
             Roles.AddUsersToRole(RegistaRol, "utilizador");
 
             Label3.Text = "";
-            Panel1.Visible = false;
+            panel1.Visible = false;
             string userId = Membership.GetUser(nomedeutilizador).ProviderUserKey.ToString();
 
             using (WingtipToys.Logic.CarrinhodecomprasAction usersShoppingCart = new WingtipToys.Logic.CarrinhodecomprasAction())

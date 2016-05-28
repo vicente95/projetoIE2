@@ -25,5 +25,12 @@ namespace WingtipToys
             }
             return query;
         }
+
+        protected void btn1_Click(object sender, EventArgs e)
+        {
+            // do something
+            Label2.Text = "2";
+            Label1.Text = Label2.Text;
+        }
     }
 }

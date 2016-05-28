@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="About" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="Compra_equipamentos.aspx.cs" Inherits="About" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <h2>Compra de equipamentos</h2>
+    <h2><span class="glyphicon glyphicon-copy"></span>&nbsp;Compra de equipamentos</h2>
     Preencha este formulario para que possmos conhecer o produto que pretende vender.<br /><br />
     <asp:Panel ID="Panel1" runat="server">
         <div class="Form">
@@ -116,7 +116,7 @@
             <p>
                 <br />
                 <asp:Label ID="L_acao" runat="server" class="Resultado" Text="" />
-                <asp:Button ID="B_Editar" runat="server" OnClick="B_Editar_Click" Text="Voltar para o inicio" Visible="true" Width="150px" />
+                <asp:Button ID="B_Editar" runat="server" OnClick="Enviar_formulario" Text="Voltar para o inicio" Visible="true" Width="150px" />
             </p>
     </div>
 

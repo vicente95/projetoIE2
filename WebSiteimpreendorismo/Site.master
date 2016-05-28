@@ -18,8 +18,10 @@
     <link href="Content/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="Content/shop-homepage.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="Content/bootstrap-theme.css" />
+    <link rel="stylesheet" href="Content/bootstrap-glyphicons.css" />
+    <link href="Content/shop-homepage.css" rel="stylesheet" />
     <link href="Content/bootstrap.css" rel="stylesheet">
 
     <style type="text/css">
@@ -41,6 +43,12 @@
         .list-group-item {
             font-size: medium;
         }
+        .list-group-item {
+            font-size: medium;
+        }
+        .list-group-item {
+            font-size: 14pt;
+        }
     </style>
 
 </head>
@@ -61,42 +69,47 @@
                     <span class="icon-bar"></span>
                 </button>
               
-                          <a href="/Custotec.aspx" class="navbar-brand">CUSTOTEC</a>
+                          <a href="/Custotec.aspx" class="navbar-brand"><span class="glyphicon glyphicon-pushpin"></span>&nbsp;CUSTOTEC</a>
                    
             </div>
+            
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
+                <ul class="nav nav-tabs">
                     <li>
-                        <a href="/Pagina_Inicial.aspx">Inicio</a>
+                        <a href="/Pagina_Inicial.aspx"><span class="glyphicon glyphicon-import"></span>&nbsp;Inicio<span class="glyphicon glyphicon-option-vertical"></span></a>
                     </li>
                     <li>
-                        <a href="/Compra_equipamentos.aspx">Compra de equipamentos</a>
+                        <a href="/Compra_equipamentos.aspx"><span class="glyphicon glyphicon-bullhorn"></span>&nbsp; Compra de equipamentos<span class="glyphicon glyphicon-option-vertical"></span></a>
                     </li>
                     <li>
-                        <a href="/Contact.aspx">Contactos</a>
+                        <a href="/Contact.aspx"><span class="glyphicon glyphicon-globe"></span>&nbsp;Contactos<span class="glyphicon glyphicon-option-vertical"></span></a>
                     </li>
                     <li>
                         <asp:LoginView ID="LoginView2" runat="server">
                     <AnonymousTemplate>
-                          <a href="/Conta/Login.aspx">Login</a>
+                          <a href="/Conta/Login.aspx"><span class="glyphicon glyphicon-log-in"></span>&nbsp;Login<span class="glyphicon glyphicon-option-vertical"></span></a>
                     </AnonymousTemplate>
                     <LoggedInTemplate>
-                        <a href="Conta/reencaminhar.aspx">Area privada</a>
+                        <a href="Conta/reencaminhar.aspx"><span class="glyphicon glyphicon-user"></span>&nbsp;Area privada</a>
                     </LoggedInTemplate>
                          </asp:LoginView>
                     </li>
-               <li class="barra2">
-                    <a runat="server" href="~/Carrinhoc.aspx" ID="cartCount">&nbsp;</a>
-                </li>
+
+                    <li class="barra2">
+                            <a runat="server" href="~/Carrinhoc.aspx" ID="cartCount">&nbsp;<span class="glyphicon glyphicon-shopping-cart"></span><span class="badge"></span></a>
+                        </li>
+               
                     <li class="barra text-nowrap">
                 <asp:LoginView ID="LoginView1" runat="server" >
                     <AnonymousTemplate>
-                        <a href="/Conta/Registo.aspx">Registar</a>
+                        <a href="/Conta/Registo.aspx"><span class="glyphicon glyphicon-edit"></span>&nbsp; Registar </a>
                     </AnonymousTemplate>
                     <LoggedInTemplate>
-                        <asp:Label runat="server" Text="&nbsp;Bem vindo&nbsp" ForeColor="#336699"></asp:Label>
-                        <asp:LoginName ID="LoginName1" runat="server" ForeColor="#336699" />&nbsp<asp:LoginStatus ID="LoginStatus1" runat="server" ForeColor="#336699" OnLoggedOut="LoginStatus1_LoggedOut" />
+                        <li class="barra4">
+                        &nbsp;&nbsp;<asp:Label runat="server" Text="&nbsp;Bem vindo&nbsp" ForeColor="#336699"></asp:Label>
+                        <asp:LoginName ID="LoginName1" runat="server" ForeColor="#336699" />&nbsp;&nbsp;&nbsp;&nbsp;<asp:LoginStatus ID="LoginStatus1" runat="server" ForeColor="#336699" OnLoggedOut="LoginStatus1_LoggedOut" LogoutText='<span class="glyphicon glyphicon-log-out"></span> Sair' Font-Strikeout="False" Font-Underline="False" />
+                        </li>
                     </LoggedInTemplate>
                 </asp:LoginView>
                         
@@ -115,29 +128,43 @@
 
             <div class="col-md-3">
                     <div class="list-group">
-                      <a class="list-group-item" ><span class="auto-style2">Ordenar:</span>
-                          <asp:DropDownList ID="DropDownList1" runat="server" Height="24px" Width="180px" AutoPostBack="True">
-                              <asp:ListItem Value="1">Aleatoriamente</asp:ListItem>
-                              <asp:ListItem Value="2">A...Z</asp:ListItem>
-                              <asp:ListItem Value="3">Mais barato</asp:ListItem>
-                              <asp:ListItem Value="4">Mais caro</asp:ListItem>
-                        </asp:DropDownList>
-                        </a>
-                        <a class="list-group-item" ><span class="auto-style2">Pesquisa:</span><br />
+                        <div class=" list-group-item dropdown">
+                              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                <span class="glyphicon glyphicon-sort-by-attributes"></span>&nbsp;Ordenar os Produtos
+                                <span class="caret"></span>
+                              </button>
+                              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                <li><asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click" ><span class="glyphicon glyphicon-sort"></span>&nbsp;Aleatoriamente</asp:LinkButton></li>
+                                <li><asp:LinkButton ID="LinkButton2" runat="server" OnClick="LinkButton2_Click" ><span class="glyphicon glyphicon-sort-by-alphabet"></span>&nbsp;A...Z</asp:LinkButton></li>
+                                <li><asp:LinkButton ID="LinkButton3" runat="server" OnClick="LinkButton3_Click" ><span class="glyphicon glyphicon-sort-by-order"></span>&nbsp;Mais barato</asp:LinkButton></li>
+                                <li><asp:LinkButton ID="LinkButton4" runat="server" OnClick="LinkButton4_Click" ><span class="glyphicon glyphicon-sort-by-order-alt"></span>&nbsp;Mais caro</asp:LinkButton></li>
+                              </ul>
+                        </div>
+                        <asp:Label ID="Label2" runat="server" Text="1" Visible="false"></asp:Label>
 
-                        <asp:TextBox ID="TextBoxpesquiza" runat="server" TextMode="SingleLine" Width="160px" Height="30px" ></asp:TextBox>
-                        <asp:Button ID="Buttonapagar" runat="server" text="⌫" ForeColor="#999999" BackColor="Black" Font-Bold="true" Height="30px" Width="30px" OnClick="Buttonapagar_Click" />
-                        <asp:Button ID="Buttonir" runat="server" text="⌕" ForeColor="#999999" Font-Bold="true" BackColor="Black" Width="30px" Height="30px" OnClick="Buttonir_Click"/>
-                      </a>
+                        <div class="list-group-item ">
+                            <div class="input-group">
+                              <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-search"></span>
+                              </span>
+                              <input class=" form-control" type="text" placeholder="Pesquisa">
+                               </div>
+                            
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button ID="Buttonapagr" class="btn btn-secondary" type="button"><span class="glyphicon glyphicon-zoom-out"></span>Voltar</button>
+                                <button ID="Buttonr" class="btn btn-secondary" type="button"><span class="glyphicon glyphicon-zoom-in"></span>Pesquisar</button>
+                                
+                                    
+                        </div>
          
-                          <asp:Menu ID="Menu2" runat="server" CssClass="list-group-item" BackColor="White" DynamicHorizontalOffset="2" Font-Names="Segoe UI Emoji" Font-Size="Small" ForeColor="Black" StaticSubMenuIndent="10px" Width="262px" Height="65px">
+                          <asp:Menu ID="Menu2" runat="server" CssClass="list-group-item" BackColor="White" DynamicHorizontalOffset="2" Font-Names="Segoe UI Emoji" Font-Size="Medium" ForeColor="Black" StaticSubMenuIndent="5px" Width="262px" Height="65px">
                               <DynamicHoverStyle BackColor="#284E98" ForeColor="White" />
                               <DynamicMenuItemStyle HorizontalPadding="9px" VerticalPadding="4px" />
                               <DynamicMenuStyle BackColor="#B5C7DE" />
                               <DynamicSelectedStyle BackColor="#507CD1" />
                             <Items>
 
-                                <asp:MenuItem Text="✆ Telemoveis" Value="1" Selectable="False">
+                                <asp:MenuItem Text="&lt;span class=&quot;glyphicon glyphicon-phone&quot;&gt;&lt;/span&gt; Telemoveis" Value="1" Selectable="False">
                                     <asp:MenuItem Text="Acessorios" Value="2" Selectable="False">
                                         <asp:MenuItem Text="Capas" Value="4" NavigateUrl="Pagina_Inicial.aspx?id=1"></asp:MenuItem>
                                         <asp:MenuItem Text="Cabos" Value="5" NavigateUrl="Pagina_Inicial.aspx?id=2"></asp:MenuItem>
@@ -150,13 +177,13 @@
                               <StaticSelectedStyle BackColor="#507CD1" />
                         </asp:Menu>
                      
-                          <asp:Menu ID="Menu1" runat="server" CssClass="list-group-item" BackColor="White" DynamicHorizontalOffset="2" Font-Names="Segoe UI Emoji" Font-Size="Small" ForeColor="Black" StaticSubMenuIndent="10px" Width="262px" Height="65px">
+                          <asp:Menu ID="Menu1" runat="server" CssClass="list-group-item" BackColor="White" DynamicHorizontalOffset="2" Font-Names="Segoe UI Emoji" Font-Size="Medium" ForeColor="Black" StaticSubMenuIndent="5px" Width="262px" Height="65px">
                               <DynamicHoverStyle BackColor="#284E98" ForeColor="White" />
                               <DynamicMenuItemStyle HorizontalPadding="9px" VerticalPadding="4px" />
                               <DynamicMenuStyle BackColor="#B5C7DE" />
                               <DynamicSelectedStyle BackColor="#507CD1" />
                             <Items>
-                                <asp:MenuItem Text="⎙ Computadores" Value="1" Selectable="False">
+                                <asp:MenuItem Text="&lt;span class=&quot;glyphicon glyphicon-print&quot;&gt;&lt;/span&gt; Computadores" Value="1" Selectable="False">
                                         <asp:MenuItem Text="Portateis" Value="2" NavigateUrl="Pagina_Inicial.aspx?id=4"></asp:MenuItem>
                                         <asp:MenuItem Text="Desktops" Value="3" NavigateUrl="Pagina_Inicial.aspx?id=5"></asp:MenuItem>
                                 </asp:MenuItem>
@@ -166,13 +193,13 @@
                               <StaticSelectedStyle BackColor="#507CD1" />
                         </asp:Menu>
                      
-                      <asp:Menu ID="Menu3" runat="server" CssClass="list-group-item" BackColor="White" DynamicHorizontalOffset="2" Font-Names="Segoe UI Emoji" Font-Size="Small" ForeColor="Black" StaticSubMenuIndent="10px" Width="262px" Height="65px">
+                      <asp:Menu ID="Menu3" runat="server" CssClass="list-group-item" BackColor="White" DynamicHorizontalOffset="2" Font-Names="Segoe UI Emoji" Font-Size="Medium" ForeColor="Black" StaticSubMenuIndent="5px" Width="262px" Height="65px">
                               <DynamicHoverStyle BackColor="#284E98" ForeColor="White" />
                               <DynamicMenuItemStyle HorizontalPadding="9px" VerticalPadding="4px" />
                               <DynamicMenuStyle BackColor="#B5C7DE" />
                               <DynamicSelectedStyle BackColor="#507CD1" />
                             <Items>
-                                <asp:MenuItem Text="⌨ Perifericos" Value="1" Selectable="False">
+                                <asp:MenuItem Text="&lt;span class=&quot;glyphicon glyphicon-headphones&quot;&gt;&lt;/span&gt; Perifericos" Value="1" Selectable="False">
                                         <asp:MenuItem Text="Comandos" Value="2" NavigateUrl="Pagina_Inicial.aspx?id=6"></asp:MenuItem>
                                         <asp:MenuItem Text="Outros" Value="3" NavigateUrl="Pagina_Inicial.aspx?id=7"></asp:MenuItem>
                                 </asp:MenuItem>
@@ -182,13 +209,13 @@
                               <StaticSelectedStyle BackColor="#507CD1" />
                         </asp:Menu>
 
-                        <asp:Menu ID="Menu4" runat="server" CssClass="list-group-item" BackColor="White" DynamicHorizontalOffset="2" Font-Names="Segoe UI Emoji" Font-Size="Small" ForeColor="Black" StaticSubMenuIndent="10px" Width="262px" Height="65px">
+                        <asp:Menu ID="Menu4" runat="server" CssClass="list-group-item" BackColor="White" DynamicHorizontalOffset="2" Font-Names="Segoe UI Emoji" Font-Size="Medium" ForeColor="Black" StaticSubMenuIndent="5px" Width="262px" Height="65px">
                               <DynamicHoverStyle BackColor="#284E98" ForeColor="White" />
                               <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="4px" />
                               <DynamicMenuStyle BackColor="#B5C7DE" />
                               <DynamicSelectedStyle BackColor="#507CD1" />
                             <Items>
-                                <asp:MenuItem Text="⑀ Cablagem" Value="1" Selectable="False">
+                                <asp:MenuItem Text="&lt;span class=&quot;glyphicon glyphicon-link&quot;&gt;&lt;/span&gt; Cablagem" Value="1" Selectable="False">
                                      <asp:MenuItem Text="Audio/Video" Value="2" NavigateUrl="Pagina_Inicial.aspx?id=8"></asp:MenuItem>
                                       <asp:MenuItem Text="Outros" Value="3" NavigateUrl="Pagina_Inicial.aspx?id=9"></asp:MenuItem>
                                 </asp:MenuItem>
@@ -241,8 +268,10 @@
 
     <!-- jQuery -->
     <script src="Scripts/jquery.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
+    <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/bootstrap.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
 
     </form>

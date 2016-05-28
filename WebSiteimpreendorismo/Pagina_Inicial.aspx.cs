@@ -15,23 +15,23 @@ namespace WingtipToys
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            Label r= (Label)Master.FindControl("Label2");
+            string teste = r.Text;
 
-            DropDownList teste = (DropDownList)Master.FindControl("DropDownList1");
-
-            if(teste.SelectedValue == "2")
+            if(teste == "2")
             {
                 String expression = "ProductName";
                 SortDirection direction2 = SortDirection.Ascending;
                ListaProdutos.Sort(expression, direction2);
 
             }
-            else if (teste.SelectedValue == "3")
+            else if (teste == "3")
             {
                 String expression = "UnitPrice";
                 SortDirection direction2 = SortDirection.Ascending;
                 ListaProdutos.Sort(expression, direction2);
             }
-            else if (teste.SelectedValue == "4")
+            else if (teste == "4")
             {
                 String expression = "UnitPrice";
                 SortDirection direction2 = SortDirection.Descending;

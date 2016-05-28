@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="Carrinhoc.aspx.cs" Inherits="WingtipToys.Carrinhoc" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
-    <h2>Carrinho</h2>
+    <h2><span class="glyphicon glyphicon-shopping-cart"></span>&nbsp;Carrinho</h2>
     <br />
     <div id="ShoppingCartTitle" runat="server" class="ContentHead"><h4>Produtos:</h4></div>
     <asp:GridView ID="CartList" runat="server" AutoGenerateColumns="False" ShowFooter="True" GridLines="Vertical" CellPadding="4"
@@ -44,11 +44,11 @@
       </td>
       <td>
           <!--Atualizar quantidade de produtos ou remover -->
-          <asp:Button ID="UpdateBtn" runat="server" Text="Atualizar Compras" CssClass="btn btn-default" OnClick="UpdateBtn_Click" />
+          <span class="glyphicon glyphicon-refresh"></span><asp:Button  ID="UpdateBtn" Text='&nbsp;Atualizar Compras' runat="server" CssClass="btn btn-primary" OnClick="UpdateBtn_Click" /> 
       </td>
       <td>
           <!--Seguir em frente, comprar -->
-          <asp:Button ID="Btncontinuar" runat="server" Text="Finalizar compra »" CssClass="btn btn-default" />
+          <asp:Button ID="Btncontinuar" runat="server" Text="Finalizar compra »" CssClass="btn btn-success" />
       </td>
     </tr>
     </table>

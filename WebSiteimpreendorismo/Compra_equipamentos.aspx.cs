@@ -24,9 +24,10 @@ public partial class About : Page
 
         flag = Escrever_para_base_dados.Registar_produto_comprar(T_Nome, T_Tel, Email, T_Produto, Lista_Tipo_de_produtos, T_descricao);
 
-        if (flag == 1) { 
+        if (flag == 1)
+        {
             L_basededados.ForeColor = System.Drawing.Color.Red;
-            L_basededados.Text= "Erro ao enviar formulario! Por favor preencha novamente";
+            L_basededados.Text = "Erro ao enviar formulario! Por favor preencha novamente";
         }
         else
         {
@@ -43,3 +44,4 @@ public partial class About : Page
 
         }
     }
+}
