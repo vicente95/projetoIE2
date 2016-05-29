@@ -15,6 +15,8 @@ public partial class About : Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        Panel2.Visible = false;
+        Panel1.Visible = true;
 
     }
     protected void Enviar_formulario(object sender, EventArgs e)
@@ -26,6 +28,7 @@ public partial class About : Page
 
         if (flag == 1)
         {
+            L_basededados.CssClass = "alert alert - danger";
             L_basededados.ForeColor = System.Drawing.Color.Red;
             L_basededados.Text = "Erro ao enviar formulario! Por favor preencha novamente";
         }
@@ -39,9 +42,18 @@ public partial class About : Page
             L_tipoProd.Text = Lista_Tipo_de_produtos.SelectedItem.Text;
             L_des.Text = T_descricao.Text;
 
+            L_acao.CssClass = "alert alert - success";
             L_acao.ForeColor = System.Drawing.Color.Green;
             L_acao.Text = "Feito com sucesso!";
 
+            Panel1.Visible = false;
+            Panel2.Visible = true;
+
         }
+    }
+
+    protected void B_Editar_ServerClick(object sender, EventArgs e)
+    {
+        Response.Redirect("/Pagina_Inicial.aspx");
     }
 }

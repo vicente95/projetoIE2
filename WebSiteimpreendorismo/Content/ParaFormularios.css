@@ -64,10 +64,17 @@
     margin-right:0px;
 }
 
+.barralogotipo{
+    position: absolute;
+    right: 11px;
+    top: 24px;
+
+}
+
 .barra2{
 
     text-align: right;
-    margin-left: 140px;
+    margin-left: 135px;
     margin-right:0px;
 }
 

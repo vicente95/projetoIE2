@@ -95,9 +95,10 @@ public partial class SiteMaster : MasterPage
 
     protected void Buttonir_Click(object sender, EventArgs e)
     {
-        //string urlpesquisa = "Pagina_inicial_pesquiza.aspx?pesq=" + TextBoxpesquiza.Text;
+        string n = String.Format("{0}", Request.Form["pesquisa"]);
+        string urlpesquisa = "Pagina_inicial_pesquiza.aspx?pesq=" + n;
 
-        //Response.Redirect(urlpesquisa);
+        Response.Redirect(urlpesquisa);
     }
 
 
@@ -106,27 +107,4 @@ public partial class SiteMaster : MasterPage
         Response.Redirect("/Pagina_Inicial.aspx");
     }
 
-    protected void LinkButton1_Click(object sender, EventArgs e)
-    {
-        Label2.Text = "1";
-        LinkButton2.PostBackUrl = "~/Pagina_Inicial.aspx";
-    }
-
-    protected void LinkButton2_Click(object sender, EventArgs e)
-    {
-        Label2.Text = "2";
-        LinkButton2.PostBackUrl = "~/Pagina_Inicial.aspx";
-    }
-
-    protected void LinkButton3_Click(object sender, EventArgs e)
-    {
-        Label2.Text = "3";
-        LinkButton2.PostBackUrl = "~/Pagina_Inicial.aspx";
-    }
-
-    protected void LinkButton4_Click(object sender, EventArgs e)
-    {
-        Label2.Text = "4";
-        LinkButton2.PostBackUrl = "~/Pagina_Inicial.aspx";
-    }
 }

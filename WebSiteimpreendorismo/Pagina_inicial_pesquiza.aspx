@@ -131,3 +131,19 @@
 
 </asp:Content>
 
+<asp:Content ID="Content2" runat="server" contentplaceholderid="ContentPlaceHolder1">
+                        <div class=" list-group-item dropdown">
+                              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                <span class="glyphicon glyphicon-sort-by-attributes"></span>&nbsp;Ordenar os Produtos
+                                <span class="caret"></span>
+                              </button>
+                              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                <li><asp:LinkButton ID="LinkButton1" runat="server" ><span class="glyphicon glyphicon-sort"></span>&nbsp;Aleatoriamente</asp:LinkButton></li>
+                                <li><asp:LinkButton ID="LinkButton2" runat="server" ><span class="glyphicon glyphicon-sort-by-alphabet"></span>&nbsp;A...Z</asp:LinkButton></li>
+                                <li><asp:LinkButton ID="LinkButton3" runat="server" ><span class="glyphicon glyphicon-sort-by-order"></span>&nbsp;Mais barato</asp:LinkButton></li>
+                                <li><asp:LinkButton ID="LinkButton4" runat="server" ><span class="glyphicon glyphicon-sort-by-order-alt"></span>&nbsp;Mais caro</asp:LinkButton></li>
+                              </ul>
+                        </div>
+</asp:Content>
+
+

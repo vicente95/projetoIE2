@@ -68,9 +68,10 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-              
-                          <a href="/Custotec.aspx" class="navbar-brand"><span class="glyphicon glyphicon-pushpin"></span>&nbsp;CUSTOTEC</a>
-                   
+                           
+                            <a href="/Custotec.aspx" class=" navbar-brand"><span class="glyphicon glyphicon-pushpin"></span>&nbsp;CUSTOTEC</a>
+                           
+                             
             </div>
             
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -97,6 +98,7 @@
                     </li>
 
                     <li class="barra2">
+                            
                             <a runat="server" href="~/Carrinhoc.aspx" ID="cartCount">&nbsp;<span class="glyphicon glyphicon-shopping-cart"></span><span class="badge"></span></a>
                         </li>
                
@@ -128,31 +130,32 @@
 
             <div class="col-md-3">
                     <div class="list-group">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                         <div class=" list-group-item dropdown">
                               <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                 <span class="glyphicon glyphicon-sort-by-attributes"></span>&nbsp;Ordenar os Produtos
                                 <span class="caret"></span>
                               </button>
                               <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                <li><asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click" ><span class="glyphicon glyphicon-sort"></span>&nbsp;Aleatoriamente</asp:LinkButton></li>
-                                <li><asp:LinkButton ID="LinkButton2" runat="server" OnClick="LinkButton2_Click" ><span class="glyphicon glyphicon-sort-by-alphabet"></span>&nbsp;A...Z</asp:LinkButton></li>
-                                <li><asp:LinkButton ID="LinkButton3" runat="server" OnClick="LinkButton3_Click" ><span class="glyphicon glyphicon-sort-by-order"></span>&nbsp;Mais barato</asp:LinkButton></li>
-                                <li><asp:LinkButton ID="LinkButton4" runat="server" OnClick="LinkButton4_Click" ><span class="glyphicon glyphicon-sort-by-order-alt"></span>&nbsp;Mais caro</asp:LinkButton></li>
+                                <li><asp:LinkButton ID="LinkButton1" runat="server" ><span class="glyphicon glyphicon-sort"></span>&nbsp;Aleatoriamente</asp:LinkButton></li>
+                                <li><asp:LinkButton ID="LinkButton2" runat="server" ><span class="glyphicon glyphicon-sort-by-alphabet"></span>&nbsp;A...Z</asp:LinkButton></li>
+                                <li><asp:LinkButton ID="LinkButton3" runat="server" ><span class="glyphicon glyphicon-sort-by-order"></span>&nbsp;Mais barato</asp:LinkButton></li>
+                                <li><asp:LinkButton ID="LinkButton4" runat="server" ><span class="glyphicon glyphicon-sort-by-order-alt"></span>&nbsp;Mais caro</asp:LinkButton></li>
                               </ul>
                         </div>
-                        <asp:Label ID="Label2" runat="server" Text="1" Visible="false"></asp:Label>
+                        </asp:ContentPlaceHolder>
 
                         <div class="list-group-item ">
                             <div class="input-group">
                               <span class="input-group-addon">
                                 <span class="glyphicon glyphicon-search"></span>
                               </span>
-                              <input class=" form-control" type="text" placeholder="Pesquisa">
+                              <input class=" form-control" type="text" placeholder="Pesquisa" id="pesquisa" name="pesquisa">
                                </div>
                             
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <button ID="Buttonapagr" class="btn btn-secondary" type="button"><span class="glyphicon glyphicon-zoom-out"></span>Voltar</button>
-                                <button ID="Buttonr" class="btn btn-secondary" type="button"><span class="glyphicon glyphicon-zoom-in"></span>Pesquisar</button>
+                                <button ID="Buttonapagr" runat="server" class="btn btn-secondary" type="button" onserverclick="Buttonapagar_Click"><span class="glyphicon glyphicon-zoom-out"></span>Voltar</button>
+                                <button ID="Buttonr" runat="server" class="btn btn-secondary" type="button" onserverclick="Buttonir_Click"><span class="glyphicon glyphicon-zoom-in"></span>Pesquisar</button>
                                 
                                     
                         </div>
@@ -258,7 +261,30 @@
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; CustoTec 2016</p>
+                    <p><img alt="" src="Paginas Capas/logotipo_desenho.jpg" width="75" height="95"/>&nbsp;Copyright &copy; CustoTec 2016 
+                    <ul class="nav nav-pills barralogotipo">
+                      <li>
+                        <a href="index.html">
+                          <span class="glyphicon glyphicon-home"></span> Custotec
+                        </a>
+                      </li>
+                      <li>
+                        <a href="shop.html">
+                          <span class="glyphicon glyphicon-gift"></span> Acerca das suas encomendas
+                        </a>
+                      </li>
+                      <li>
+                        <a href="about.html">
+                          <span class="glyphicon glyphicon-send"></span> Pagamentos
+                        </a>
+                      </li>
+                      <li>
+                        <a href="about.html">
+                          <span class="glyphicon glyphicon-hourglass"></span> Envios
+                        </a>
+                      </li>
+                    </ul></p>
+
                 </div>
             </div>
         </footer>

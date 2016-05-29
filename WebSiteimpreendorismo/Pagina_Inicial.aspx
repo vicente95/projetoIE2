@@ -16,7 +16,8 @@
                             </ol>
                             <div class="carousel-inner">
                                 <div class="item active">
-                                    <img class="slide-image"  src="Fotos/iphone4f2.PNG" alt="" style=" height:420px">
+
+                                    <img class="slide-image"  src="Paginas%20Capas/cap_1.jpg" alt="" style=" height:420px">
                                 </div>
                                 <div class="item">
                                     <img class="slide-image" src="Fotos/ratoApple2.PNG" alt="" style=" height:420px">
@@ -43,7 +44,7 @@
                     <table >
                         <tr>
                             <br /><br /><br />
-                            <td>Ainda não existem produtos nesta categoria.<br /> <a class="btn btn-default" href="/Pagina_Inicial.aspx">« Voltar</a></td>
+                            <td>Ainda não existem produtos nesta categoria.<br /><br /> <a class="btn btn-info" href="/Pagina_Inicial.aspx"><span class="glyphicon glyphicon-paperclip"></span> Voltar</a></td>
                         </tr>
                     </table>
                 </EmptyDataTemplate>
@@ -130,3 +131,18 @@
     <br />
    
 </asp:Content>
+<asp:Content ID="Content1" runat="server" contentplaceholderid="ContentPlaceHolder1">
+                        <div class=" list-group-item dropdown">
+                              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                <span class="glyphicon glyphicon-sort-by-attributes"></span>&nbsp;Ordenar os Produtos
+                                <span class="caret"></span>
+                              </button>
+                              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                <li><asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click" ><span class="glyphicon glyphicon-sort"></span>&nbsp;Aleatoriamente</asp:LinkButton></li>
+                                <li><asp:LinkButton ID="LinkButton2" runat="server" OnClick="LinkButton2_Click" ><span class="glyphicon glyphicon-sort-by-alphabet"></span>&nbsp;A...Z</asp:LinkButton></li>
+                                <li><asp:LinkButton ID="LinkButton3" runat="server" OnClick="LinkButton3_Click" ><span class="glyphicon glyphicon-sort-by-order"></span>&nbsp;Mais barato</asp:LinkButton></li>
+                                <li><asp:LinkButton ID="LinkButton4" runat="server" OnClick="LinkButton4_Click" ><span class="glyphicon glyphicon-sort-by-order-alt"></span>&nbsp;Mais caro</asp:LinkButton></li>
+                              </ul>
+                        </div>
+</asp:Content>
+

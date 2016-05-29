@@ -16,35 +16,6 @@ namespace WingtipToys
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            DropDownList teste = (DropDownList)Master.FindControl("DropDownList1");
-
-            if (teste.SelectedValue == "2")
-            {
-                String expression = "ProductName";
-                SortDirection direction2 = SortDirection.Ascending;
-                ListaProdutos.Sort(expression, direction2);
-
-            }
-            else if (teste.SelectedValue == "3")
-            {
-                String expression = "UnitPrice";
-                SortDirection direction2 = SortDirection.Ascending;
-                ListaProdutos.Sort(expression, direction2);
-            }
-            else if (teste.SelectedValue == "4")
-            {
-                String expression = "UnitPrice";
-                SortDirection direction2 = SortDirection.Descending;
-                ListaProdutos.Sort(expression, direction2);
-            }
-            else
-            {
-                String expression = "ProductID";
-                SortDirection direction2 = SortDirection.Descending;
-                ListaProdutos.Sort(expression, direction2);
-
-            }
-
 
         }
 
@@ -73,6 +44,35 @@ namespace WingtipToys
                 lvDataPager1.Visible = false;
                 Panel1.Visible = false;
             }
+        }
+
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+            String expression = "ProductID";
+            SortDirection direction2 = SortDirection.Descending;
+            ListaProdutos.Sort(expression, direction2);
+
+        }
+
+        protected void LinkButton2_Click(object sender, EventArgs e)
+        {
+            String expression = "ProductName";
+            SortDirection direction2 = SortDirection.Ascending;
+            ListaProdutos.Sort(expression, direction2);
+        }
+
+        protected void LinkButton3_Click(object sender, EventArgs e)
+        {
+            String expression = "UnitPrice";
+            SortDirection direction2 = SortDirection.Ascending;
+            ListaProdutos.Sort(expression, direction2);
+        }
+
+        protected void LinkButton4_Click(object sender, EventArgs e)
+        {
+            String expression = "UnitPrice";
+            SortDirection direction2 = SortDirection.Descending;
+            ListaProdutos.Sort(expression, direction2);
         }
     }
 }

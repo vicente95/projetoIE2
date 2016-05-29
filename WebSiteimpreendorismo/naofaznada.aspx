@@ -107,23 +107,25 @@
         <button type="button" class="btn btn-default btn-lg">
   <span class="glyphicon glyphicon-star"></span> Star 
 </button>
-    <ul class="nav nav-pills">
-  <li>
-  
-  </li>
+  <ul class="nav nav-pills">
   <li>
     <a href="index.html">
-      <span class="glyphicon glyphicon-home"></span> Home
+      <span class="glyphicon glyphicon-home"></span> Custotec
     </a>
   </li>
   <li>
     <a href="shop.html">
-      <span class="glyphicon glyphicon-shopping-cart"></span> Shop
+      <span class="glyphicon glyphicon-gift"></span> Acerca das suas encomendas
     </a>
   </li>
   <li>
     <a href="about.html">
-      <span class="glyphicon glyphicon-info-sign"></span> About
+      <span class="glyphicon glyphicon-send"></span> Pagamentos
+    </a>
+  </li>
+  <li>
+    <a href="about.html">
+      <span class="glyphicon glyphicon-hourglass"></span> Envios
     </a>
   </li>
 </ul>
@@ -193,8 +195,8 @@
 
 
     <a class="list-group-item" ><span class="auto-style2">Ordenar:</span>
-                          <asp:DropDownList ID="DropDownList1" runat="server" Height="24px" Width="180px" AutoPostBack="True">
-                              <asp:ListItem Value="1" Text=' Aleatoriamente '></asp:ListItem>
+                          <asp:DropDownList ID="DropDownList1" runat="server" Height="24px" Width="180px" AutoPostBack="true">
+                              <asp:ListItem Value="1" Text='Aleatoriamente <span class="glyphicon glyphicon-bitcoin"></span>'></asp:ListItem>
                               <asp:ListItem Value="2">A...Z</asp:ListItem>
                               <asp:ListItem Value="3">Mais barato</asp:ListItem>
                               <asp:ListItem Value="4">Mais caro</asp:ListItem>
@@ -206,7 +208,7 @@
 
     <asp:Label ID="Label2" runat="server" Text="" Visible="false"></asp:Label>
     <asp:Label ID="Label1" runat="server" Text="L"></asp:Label>
-    <asp:DropDownList ID="DropDownList2" runat="server" Height="24px" Width="180px" AutoPostBack="True">
+    <asp:DropDownList ID="DropDownList2" runat="server" Height="24px" Width="180px">
                               <asp:ListItem Value="1" Text=' Aleatoriamente '></asp:ListItem>
                               <asp:ListItem Value="2">A...Z</asp:ListItem>
                               <asp:ListItem Value="3">Mais barato</asp:ListItem>
