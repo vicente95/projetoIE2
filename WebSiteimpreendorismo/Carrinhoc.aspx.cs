@@ -62,9 +62,9 @@ namespace WingtipToys
                     cbRemove = (CheckBox)CartList.Rows[i].FindControl("Remove");
                     cartUpdates[i].RemoveItem = cbRemove.Checked;
 
-                    TextBox quantityTextBox = new TextBox();
-                    quantityTextBox = (TextBox)CartList.Rows[i].FindControl("PurchaseQuantity");
-                    cartUpdates[i].PurchaseQuantity = Convert.ToInt16(quantityTextBox.Text.ToString());
+                   // TextBox quantityTextBox = new TextBox();
+                   // quantityTextBox = (TextBox)CartList.Rows[i].FindControl("PurchaseQuantity");
+                   // cartUpdates[i].PurchaseQuantity = Convert.ToInt16(quantityTextBox.Text.ToString());
                 }
                 usersShoppingCart.UpdateShoppingCartDatabase(cartId, cartUpdates);
                 CartList.DataBind();
@@ -90,6 +90,16 @@ namespace WingtipToys
         protected void UpdateBtn_Click(object sender, EventArgs e)
         {
             UpdateCartItems();
+        }
+
+        protected void Btnvoltar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Btncontinuar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Carrinhocheckout.aspx");
         }
     }
 }

@@ -92,7 +92,7 @@
                           <a href="/Conta/Login.aspx"><span class="glyphicon glyphicon-log-in"></span>&nbsp;Login<span class="glyphicon glyphicon-option-vertical"></span></a>
                     </AnonymousTemplate>
                     <LoggedInTemplate>
-                        <a href="Conta/reencaminhar.aspx"><span class="glyphicon glyphicon-user"></span>&nbsp;Area privada</a>
+                        <a href="/Conta/reencaminhar.aspx"><span class="glyphicon glyphicon-user"></span>&nbsp;Area privada</a>
                     </LoggedInTemplate>
                          </asp:LoginView>
                     </li>
@@ -261,7 +261,7 @@
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p><img alt="" src="Paginas Capas/logotipo_desenho.jpg" width="75" height="95"/>&nbsp;Copyright &copy; CustoTec 2016 
+                    <p><img alt="" src="/Paginas Capas/logotipo_desenho.jpg" width="75" height="95"/>&nbsp;Copyright &copy; CustoTec 2016 
                     <ul class="nav nav-pills barralogotipo">
                       <li>
                         <a href="index.html">

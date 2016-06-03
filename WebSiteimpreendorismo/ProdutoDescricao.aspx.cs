@@ -14,7 +14,7 @@ namespace WingtipToys
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            ViewState["prevPageURL"] = Request.UrlReferrer.ToString();
         }
 
         public IQueryable<Produto> GetProduct([QueryString("productID")] int? productId)
@@ -31,5 +31,6 @@ namespace WingtipToys
             }
             return query;
         }
+
     }
 }

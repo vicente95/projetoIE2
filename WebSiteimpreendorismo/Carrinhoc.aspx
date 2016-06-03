@@ -10,17 +10,7 @@
         <Columns>
         <asp:BoundField DataField="ProductID" HeaderText="ID" SortExpression="ProductID"><HeaderStyle CssClass="hidden"/><ItemStyle CssClass="hidden"/></asp:BoundField>
         <asp:BoundField DataField="Produtos.ProductName" HeaderText="Nome" />        
-        <asp:BoundField DataField="Produtos.UnitPrice" HeaderText="Preço" DataFormatString="{0:c}"/>     
-        <asp:TemplateField   HeaderText="Quantidade">            
-                <ItemTemplate>
-                    <asp:TextBox ID="PurchaseQuantity" Width="40" runat="server" Text="<%#: Item.Quantity %>"></asp:TextBox> 
-                </ItemTemplate>        
-        </asp:TemplateField>    
-        <asp:TemplateField HeaderText="Item Total">            
-                <ItemTemplate>
-                    <%#: String.Format("{0:c}", ((Convert.ToDouble(Item.Quantity)) *  Convert.ToDouble(Item.Produtos.UnitPrice)))%>
-                </ItemTemplate>        
-        </asp:TemplateField> 
+        <asp:BoundField DataField="Produtos.UnitPrice" HeaderText="Preço" DataFormatString="{0:c}"/>       
         <asp:TemplateField HeaderText="Remover Produto">            
                 <ItemTemplate>
                     <asp:CheckBox id="Remove" runat="server"></asp:CheckBox>
@@ -39,16 +29,19 @@
     <table> 
     <tr>
       <td>
+          <br />
           <!--voltar para a pagina dos produtos -->
-          <asp:Button ID="Btnvoltar" runat="server" Text="Continuar a comprar «" CssClass="btn btn-default" />
+          <a href='javascript:history.go(-1)' class="btn btn-default">« Continuar a comprar</a>&nbsp;
       </td>
       <td>
+          <br />
           <!--Atualizar quantidade de produtos ou remover -->
-          <span class="glyphicon glyphicon-refresh"></span><asp:Button  ID="UpdateBtn" Text='&nbsp;Atualizar Compras' runat="server" CssClass="btn btn-primary" OnClick="UpdateBtn_Click" /> 
+          <asp:Button  ID="UpdateBtn" Text='&nbsp;Atualizar Compras' runat="server" CssClass="btn btn-primary" OnClick="UpdateBtn_Click" />&nbsp;
       </td>
       <td>
+          <br />
           <!--Seguir em frente, comprar -->
-          <asp:Button ID="Btncontinuar" runat="server" Text="Finalizar compra »" CssClass="btn btn-success" />
+          <asp:Button ID="Btncontinuar" runat="server" Text="Finalizar compra »" CssClass="btn btn-success" OnClick="Btncontinuar_Click" />
       </td>
     </tr>
     </table>

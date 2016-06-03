@@ -22,7 +22,7 @@
                     <asp:RegularExpressionValidator ID="Val_Tel_2" runat="server" ControlToValidate="T_Tel" Display="Dynamic" ErrorMessage="** Insira um numero VALIDO" Text="**" ValidationExpression="^(\d{9})$" ValidationGroup="Formulario" />
                     <asp:TextBox ID="T_Tel" runat="server" Width="196px" />
                     &nbsp;<label>E-mail: </label>
-                    <asp:TextBox ID="Email" runat="server" Width="196px" />
+                    <asp:TextBox ID="Email" runat="server" Width="203px" />
                     &nbsp;<asp:RequiredFieldValidator ID="EmailRequired3" runat="server" ControlToValidate="Email" Display="Dynamic" ErrorMessage="* Email Obrigatório" Text="*" ValidationGroup="Formulario" />
                     <asp:RegularExpressionValidator ID="EmailRequired4" runat="server" ControlToValidate="Email" Display="Dynamic" ErrorMessage="** Insira um Email Valído" Text="**" ValidationExpression="^([a-z0-9_\.-]+\@[\da-z\.-]+\.[a-z\.]{2,6})$" ValidationGroup="Formulario" />
                 </li>
@@ -32,7 +32,7 @@
                     <label>
                     Produto:&nbsp;
                     </label>
-                    <asp:TextBox ID="T_Produto" runat="server" Width="258px" />
+                    <asp:TextBox ID="T_Produto" runat="server" Width="197px" />
                     <label>
                     <asp:RequiredFieldValidator ID="Val_Produto3" runat="server" ControlToValidate="T_Produto" Display="Dynamic" ErrorMessage="* Insira uma Morada" Text="*" ValidationGroup="Formulario" />
                     <asp:RegularExpressionValidator ID="Val_Produto4" runat="server" ControlToValidate="T_Produto" Display="Dynamic" ErrorMessage="** Insira uma Morada válido" Text="**" ValidationExpression="^([A-Za-z ÀÈÌÒÙàèìòùÁÉÍÓÚáéíóúÂÊÎÔÛâêîôûÃÕãõçÇ]{2,100}[^\s])$" ValidationGroup="Formulario" />
@@ -116,7 +116,7 @@
             <p>
                 <br />
                 <asp:Label ID="L_acao" runat="server" class="Resultado" Text="" />
-                <Button ID="B_Editar" runat="server" class="btn btn-default" onserverclick="B_Editar_ServerClick" Visible="true" Width="150px" ><span class="glyphicon glyphicon-check"></span> Voltar para o inicio</Button>
+                <Button ID="B_Editar" runat="server" class="btn btn-default" onserverclick="B_Editar_ServerClick" Visible="true"><span class="glyphicon glyphicon-check"></span> Voltar para o inicio</Button>
             </p>
     </div>
 

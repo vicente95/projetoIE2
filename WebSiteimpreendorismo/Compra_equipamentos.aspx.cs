@@ -11,7 +11,7 @@ using System.Data.SqlClient;
 using System.Configuration;
 using System.Web.Configuration;
 
-public partial class About : Page
+public partial class Compra_equipamentos : Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {

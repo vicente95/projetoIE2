@@ -116,13 +116,9 @@ namespace WingtipToys.Logic
                         {
                             if (cartItem.Produtos.ProductID == CartItemUpdates[i].ProductId)
                             {
-                                if (CartItemUpdates[i].PurchaseQuantity < 1 || CartItemUpdates[i].RemoveItem == true)
+                                if (CartItemUpdates[i].RemoveItem == true)
                                 {
                                     RemoveItem(cartId, cartItem.ProductId);
-                                }
-                                else
-                                {
-                                    UpdateItem(cartId, cartItem.ProductId, CartItemUpdates[i].PurchaseQuantity);
                                 }
                             }
                         }

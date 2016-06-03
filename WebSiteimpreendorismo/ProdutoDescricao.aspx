@@ -36,7 +36,8 @@
                         </div>
                       </div>
                       <br />
-                        <b>Descrição:</b><br /><%#:Item.Description %><br /><span><b>Preço:</b>&nbsp;<%#: String.Format("{0:c}", Item.UnitPrice) %></span><br /><span><b>Numero do produto:</b>&nbsp;<%#:Item.ProductID %></span><br /><br /></td>
+                        <b>Descrição:</b><br /><%#:Item.Description %><br /><br /><br /><span><b>Preço:</b>&nbsp;<%#: String.Format("{0:c}", Item.UnitPrice) %></span><br /><br /><br />
+                        <a href='javascript:history.go(-1)' class="btn btn-default"><span class="glyphicon glyphicon-circle-arrow-left"></span>&nbsp;Voltar</a></td>
                     <td style=" text-align:left">
                         
                     </td>
